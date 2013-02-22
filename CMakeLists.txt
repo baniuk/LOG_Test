@@ -42,4 +42,4 @@ add_subdirectory(Configs)
 ########################################################################
 file(WRITE ${TMP}/make_warper_script.bat "rem Warper makefile created autmoaticly\n" )
 file(APPEND ${TMP}/make_warper_script.bat "set STLSOFT=${External_tools_SOURCE_DIR}/${STL_VER}\n")
-file(APPEND ${TMP}/make_warper_script.bat "${make}\n")
+file(APPEND ${TMP}/make_warper_script.bat "${MAKE}\n")
