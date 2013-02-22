@@ -1,0 +1,16 @@
+*.exe
+*.obj
+*.pdb
+*.lib
+*.o
+*.log
+!Readme
+/**/ipch/
+/**/CMakeFiles/
+/CMake*/
+/ipch/
+cmake_install.cmake
+[mM]akefile
+CMakeFiles
+CMakeCache.txt
+
