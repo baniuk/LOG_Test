@@ -9,6 +9,7 @@ IF "%1"=="ALL" goto :CLEAR_ALL
 goto :EOF
 
 :CLEAR_ALL
+echo Cleaning everything...
 rmdir CMake_trash /s /q
 rmdir doc\html /s /q
 FOR /R %%A IN (*) DO IF %%~nA%%~xA==Makefile del /q %%~fA
