@@ -1,6 +1,7 @@
 /CMake*/
 /ipch/
 *.cmake
+/bin/
 cmake_install.cmake
 [mM]akefile
 CMakeFiles
