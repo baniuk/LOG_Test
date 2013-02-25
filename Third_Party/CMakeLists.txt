@@ -36,14 +36,21 @@ ENDIF ( ${MSVC} )
 	
 ########################################################################
 # Kompilacja Pantheios       										   #
-# JEst to pe³en projekt, generuje wszystkie wersji libów			   #	
+# JEst to pe³en projekt, generuje wszystkie wersje libów			   #	
 ######################################################################## 	
-
+# W zalezonosci od wersji ró¿ne makefile w projekcie
+IF (${MSVC_VERSION} EQUAL 1600)	# MSVC10
+	set(PANTH_MAKEFILE_PATH build/vc10.x64)
+ELSEIF (${MSVC_VERSION} GREATER 1600)	#MSVC11
+	set(PANTH_MAKEFILE_PATH build/vc11.x64)
+ELSE (${MSVC_VERSION} GREATER 1600)
+	MESSAGE(FATAL_ERROR "Setup correct makefile fo Pantheios") 	
+ENDIF(${MSVC_VERSION} EQUAL 1600)
 ExternalProject_Add(	Pantheios
 						PREFIX ${TMP}
 						TMP_DIR ${TMP}
 						STAMP_DIR ${TMP}
-						SOURCE_DIR ${External_tools_SOURCE_DIR}/${PANTHEIOS_VER}/build/vc11.x64
+						SOURCE_DIR ${External_tools_SOURCE_DIR}/${PANTHEIOS_VER}/${PANTH_MAKEFILE_PATH}
 						CONFIGURE_COMMAND ""
 						BUILD_COMMAND ${MAKE}
 						BUILD_IN_SOURCE 1

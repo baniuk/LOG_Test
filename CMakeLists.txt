@@ -31,7 +31,7 @@ add_subdirectory(Third_Party)
 ########################################################################
 # Building Doxygen DOC     (targrt doc, all)                           #
 ########################################################################
-#add_subdirectory(Configs)
+add_subdirectory(Configs)
 
 #include_directories(${CMAKE_ROOT}/external/stlsoft-1.9.116/include)
 #set( ENV{STLSOFT}  ${CMAKE_CURRENT_BINARY_DIR}/stlsoft-1.9.116)

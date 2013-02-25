@@ -6,6 +6,7 @@ FOR /R %%A IN (*) DO IF %%~nA%%~xA==cmake_install.cmake del /q %%~fA
 FOR /R %%A IN (*) DO IF %%~nA%%~xA==CMakeCache.txt del /q %%~fA
 FOR /D /R %%X IN (CMakeFiles*) DO rmdir "%%X" /s /q
 IF "%1"=="ALL" goto :CLEAR_ALL
+rmdir bin /s /q
 goto :EOF
 
 :CLEAR_ALL

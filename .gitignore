@@ -1,5 +1,6 @@
 /CMake*/
 /ipch/
+/bin/
 *.cmake
 /bin/
 cmake_install.cmake
