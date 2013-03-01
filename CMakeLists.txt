@@ -11,6 +11,22 @@ cmake_minimum_required (VERSION 2.8)
 find_package(Subversion REQUIRED)
 find_package(Doxygen REQUIRED)
 
+########################################################################
+# Setting tools                                                        #
+########################################################################
+IF ( ${WIN32} )
+	set(WGET_EXECUTABLE ${Test_SOURCE_DIR}/tools/wget.exe CACHE FILEPATH "")
+	set(ZIP_EXECUTABLE ${Test_SOURCE_DIR}/tools/unzip.exe CACHE FILEPATH "")
+	set(PATCH_EXECUTABLE ${Test_SOURCE_DIR}/tools/patch.exe CACHE FILEPATH "")
+ELSEIF ( ${UNIX} )
+	# automatyczne szukanie narzêdzi, ustawia te same zmienne co wy¿ej
+ELSE ( ${UNIX} )
+	message(FATAL_ERROR "Unknown system")
+ENDIF ( ${WIN32} )
+
+########################################################################
+# Setup project                                                        #
+########################################################################
 include(ExternalProject)
 # Project name - nazwa jako zmienna bo u¿ywana tez w doxygenie
 set(PROJECT_NAME "Test" CACHE STRING "")
