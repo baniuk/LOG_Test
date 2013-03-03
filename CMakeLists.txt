@@ -2,7 +2,8 @@
 # CMake build script for LOG_test.									   #
 ########################################################################
 # Possible targets:
-# gtest_main gtest	- from gtest
+# 	gtest_main gtest	- from gtest
+#	doc					- doxygen doc
 
 cmake_minimum_required (VERSION 2.8) 
 ########################################################################
@@ -12,14 +13,9 @@ find_package(Subversion REQUIRED)
 find_package(Doxygen REQUIRED)
 
 # Define helper functions and macros
-include(Cmake/internal_utils.cmake)
+include(CMake/internal_utils.cmake)
 
 config_compiler_and_linker()  # Defined in internal_utils.cmake.
-
-########################################################################
-# Setting tools                                                        #
-########################################################################
-set_project_tools()	# Defined in internal_utils.cmake.
 
 ########################################################################
 # Setup project                                                        #
@@ -28,6 +24,11 @@ include(ExternalProject)
 # Project name - nazwa jako zmienna bo u¿ywana tez w doxygenie
 set(PROJECT_NAME "Test" CACHE STRING "")
 project (${PROJECT_NAME}) 
+
+########################################################################
+# Setting tools                                                        #
+########################################################################
+set_project_tools()	# Defined in internal_utils.cmake.
 
 # TMP dirs
 file(MAKE_DIRECTORY CMake_trash)
@@ -56,4 +57,3 @@ add_subdirectory(src)
 ########################################################################
 file(WRITE ${TMP}/make_wrapper_script.bat "rem Warper makefile created autmoaticly\n" )
 file(APPEND ${TMP}/make_wrapper_script.bat "set STLSOFT=${External_tools_SOURCE_DIR}/${STL_VER}\n")
-file(APPEND ${TMP}/make_wrapper_script.bat "nmake\n")

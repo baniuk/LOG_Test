@@ -43,9 +43,9 @@ IF (${MSVC_VERSION} EQUAL 1600)	# MSVC10
 	set(PANTH_MAKEFILE_PATH build/vc10.x64)
 ELSEIF (${MSVC_VERSION} GREATER 1600)	#MSVC11
 	set(PANTH_MAKEFILE_PATH build/vc11.x64)
-ELSE (${MSVC_VERSION} GREATER 1600)
-	MESSAGE(FATAL_ERROR "Setup correct makefile fo Pantheios") 	
-ENDIF(${MSVC_VERSION} EQUAL 1600)
+ELSE ()
+	MESSAGE(FATAL_ERROR "Setup correct makefile for Pantheios") 	
+ENDIF()
 ExternalProject_Add(	Pantheios
 						PREFIX ${TMP}
 						TMP_DIR ${TMP}
@@ -61,6 +61,7 @@ ExternalProject_Add(	Pantheios
 ######################################################################## 
 # Add gtest http://stackoverflow.com/questions/9689183/cmake-googletest
 
+# Zastanowiæ siê czt odzielne katalogi na Debug i Release s¹ potrzebne
 ExternalProject_Add(
 					googletest-read-only
 					TMP_DIR ${TMP}
@@ -74,7 +75,8 @@ ExternalProject_Add(
 						-DCMAKE_ARCHIVE_OUTPUT_DIRECTORY_DEBUG:PATH=DebugLibs
 						-DCMAKE_ARCHIVE_OUTPUT_DIRECTORY_RELEASE:PATH=ReleaseLibs
 						-Dgtest_force_shared_crt=ON
-					BINARY_DIR ${External_tools_SOURCE_DIR}/GTest-bin
+					# jeœli tego nie ma to biblioteki trafiaj¹ do m:\Projekty\LOG_test\bin\Third_Party\src\googletest-read-only-build\	
+					BINARY_DIR ${External_tools_SOURCE_DIR}/GTest-bin	
 					# Disable install step
 					INSTALL_COMMAND ""
 					# Wrap download, configure and build steps in a script to log output
