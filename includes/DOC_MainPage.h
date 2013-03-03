@@ -3,10 +3,15 @@
 * \brief Main page documentation
 *
 * This file contains main page for doc and some todos
-* \todo Dorobiæ skrypt czyszcz¹cy ca³y projekt z pozosta³oœci CMake dla Unixa
+* \todo 
+*		-# Dorobiæ skrypt czyszcz¹cy ca³y projekt z pozosta³oœci CMake dla Unixa\n
+*		-# Zrobiæ jak w gtest osobny katlaog na pewne ustawienia i makra cmake (scie¿ki do narzedzi itp)\n
+*		-# Narzêdzia dla unixa w katalogu external_tools
+*		-# Kompilacja MP jak w dokumentacji w EverNote /OpenSceneGraph/trunk – osg\n
+*		-# poprawiæ gitignore bo nie wszêdzie bêdzie potrzebny w przypdku out-of-source build
 */
 
-/** \mainpage Test bibliotek logujacych
+/** \mainpage Test bibliotek logujacych oraz budowa struktury projektu
 *
 * Program testuj¹cy biblioteki logowania oraz budowê oprogramowania za pomoc¹ CMake.
 * \section Instalacja
