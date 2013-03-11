@@ -60,21 +60,23 @@ ExternalProject_Add(	Pantheios
 # Kompilacja Gtest          										   #	
 ######################################################################## 
 # Add gtest http://stackoverflow.com/questions/9689183/cmake-googletest
-
+# \todo dodaæ set katalogów jak w przyk³adzie http://www.cmake.org/pipermail/cmake/2012-June/050781.html
+# \warning Czy biblioteki te bêda do znalezienia automatycznie??
 ExternalProject_Add(
-					googletest-read-only
+					googletest
+					# wszystko l¹duje w Third_party/Gtest
+					PREFIX ${CMAKE_CURRENT_BINARY_DIR}/GTest
 					TMP_DIR ${TMP}
-					STAMP_DIR ${External_tools_SOURCE_DIR}/GTest-stamp
 					SVN_REPOSITORY http://googletest.googlecode.com/svn/trunk/
 					TIMEOUT 10
-					SOURCE_DIR ${External_tools_SOURCE_DIR}/GTest-src
+					# SOURCE_DIR ${External_tools_SOURCE_DIR}/GTest-src
 					# Force separate output paths for debug and release builds to allow easy
 					# identification of correct lib in subsequent TARGET_LINK_LIBRARIES commands
 					CMAKE_ARGS -DCMAKE_CXX_FLAGS='/D_VARIADIC_MAX=10'
 						-DCMAKE_ARCHIVE_OUTPUT_DIRECTORY_DEBUG:PATH=DebugLibs
 						-DCMAKE_ARCHIVE_OUTPUT_DIRECTORY_RELEASE:PATH=ReleaseLibs
 						-Dgtest_force_shared_crt=ON
-					BINARY_DIR ${External_tools_SOURCE_DIR}/GTest-bin
+					# BINARY_DIR ${External_tools_SOURCE_DIR}/GTest-bin # bez tej linijki trafia do bin do domyslengo katalogu
 					# Disable install step
 					INSTALL_COMMAND ""
 					# Wrap download, configure and build steps in a script to log output
