@@ -47,6 +47,11 @@ add_subdirectory(Third_Party)
 ########################################################################
 add_subdirectory(Configs)
 
+########################################################################
+# Building Libraries and modules                                       #
+########################################################################
+add_subdirectory(libs)
+
 #include_directories(${CMAKE_ROOT}/external/stlsoft-1.9.116/include)
 #set( ENV{STLSOFT}  ${CMAKE_CURRENT_BINARY_DIR}/stlsoft-1.9.116)
 
