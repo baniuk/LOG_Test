@@ -1,7 +1,32 @@
-# Tweaks CMake's default compiler/linker settings to suit Google Test's needs.
-#
-# This must be a macro(), as inside a function string() can only
-# update variables in the function scope.
+# cmake utils and macros
+
+macro(config_compiler_and_linker)
+
+	IF (MSVC)
+		SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /MP")
+	ENDIF(MSVC)  
+
+	endmacro()
+
+########################################################################
+# Setting tools                                                        #
+########################################################################
+macro(set_project_tools)
+	IF ( ${WIN32} )
+		set(WGET_EXECUTABLE ${Test_SOURCE_DIR}/tools/wget.exe CACHE FILEPATH "")
+		set(ZIP_EXECUTABLE ${Test_SOURCE_DIR}/tools/unzip.exe CACHE FILEPATH "")
+		set(PATCH_EXECUTABLE ${Test_SOURCE_DIR}/tools/patch.exe CACHE FILEPATH "")
+	ELSEIF ( ${UNIX} )
+		# automatyczne szukanie narzêdzi, ustawia te same zmienne co wy¿ej
+	ELSE ( ${UNIX} )
+		message(FATAL_ERROR "Unknown system")
+	ENDIF ( ${WIN32} )
+
+endmacro()
+
+
+# --------------------------------------------------------------------------------
+
 macro(fix_default_compiler_settings_)
   if (MSVC)
     # For MSVC, CMake sets certain flags to defaults we want to override.
@@ -26,29 +51,6 @@ macro(fix_default_compiler_settings_)
       string(REPLACE "/W3" "-W4" ${flag_var} "${${flag_var}}")
     endforeach()
   endif()
-endmacro()
-
-# Defines the compiler/linker flags used to build Google Test and
-# Google Mock.  You can tweak these definitions to suit your need.  A
-# variable's value is empty before it's explicitly assigned to.
-macro(config_compiler_and_linker)
-
-	IF (MSVC)
-		SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /MP")
-	ENDIF(MSVC)  
-	########################################################################
-	# Setting tools                                                        #
-	########################################################################
-	IF ( ${WIN32} )
-		set(WGET_EXECUTABLE ${Test_SOURCE_DIR}/tools/wget.exe CACHE FILEPATH "")
-		set(ZIP_EXECUTABLE ${Test_SOURCE_DIR}/tools/unzip.exe CACHE FILEPATH "")
-		set(PATCH_EXECUTABLE ${Test_SOURCE_DIR}/tools/patch.exe CACHE FILEPATH "")
-	ELSEIF ( ${UNIX} )
-		# automatyczne szukanie narzêdzi, ustawia te same zmienne co wy¿ej
-	ELSE ( ${UNIX} )
-		message(FATAL_ERROR "Unknown system")
-	ENDIF ( ${WIN32} )
-
 endmacro()
 
 # Defines the gtest & gtest_main libraries.  User tests should link

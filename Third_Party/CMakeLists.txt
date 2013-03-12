@@ -62,6 +62,7 @@ ExternalProject_Add(	Pantheios
 # Add gtest http://stackoverflow.com/questions/9689183/cmake-googletest
 # \todo dodaæ set katalogów jak w przyk³adzie http://www.cmake.org/pipermail/cmake/2012-June/050781.html
 # \warning Czy biblioteki te bêda do znalezienia automatycznie??
+
 ExternalProject_Add(
 					googletest
 					# wszystko l¹duje w Third_party/Gtest
