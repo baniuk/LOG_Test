@@ -2,7 +2,8 @@
 # CMake build script for LOG_test.									   #
 ########################################################################
 # Possible targets:
-# gtest_main gtest	- from gtest
+# 	gtest_main gtest	- from gtest
+#	doc					- doxygen doc
 
 cmake_minimum_required (VERSION 2.8) 
 ########################################################################
@@ -11,18 +12,10 @@ cmake_minimum_required (VERSION 2.8)
 find_package(Subversion REQUIRED)
 find_package(Doxygen REQUIRED)
 
-########################################################################
-# Setting tools                                                        #
-########################################################################
-IF ( ${WIN32} )
-	set(WGET_EXECUTABLE ${Test_SOURCE_DIR}/tools/wget.exe CACHE FILEPATH "")
-	set(ZIP_EXECUTABLE ${Test_SOURCE_DIR}/tools/unzip.exe CACHE FILEPATH "")
-	set(PATCH_EXECUTABLE ${Test_SOURCE_DIR}/tools/patch.exe CACHE FILEPATH "")
-ELSEIF ( ${UNIX} )
-	# automatyczne szukanie narzêdzi, ustawia te same zmienne co wy¿ej
-ELSE ( ${UNIX} )
-	message(FATAL_ERROR "Unknown system")
-ENDIF ( ${WIN32} )
+# Define helper functions and macros
+include(CMake/internal_utils.cmake)
+
+config_compiler_and_linker()  # Defined in internal_utils.cmake.
 
 ########################################################################
 # Setup project                                                        #
@@ -31,6 +24,11 @@ include(ExternalProject)
 # Project name - nazwa jako zmienna bo u¿ywana tez w doxygenie
 set(PROJECT_NAME "Test" CACHE STRING "")
 project (${PROJECT_NAME}) 
+
+########################################################################
+# Setting tools                                                        #
+########################################################################
+set_project_tools()	# Defined in internal_utils.cmake.
 
 # TMP dirs
 file(MAKE_DIRECTORY CMake_trash)
@@ -49,6 +47,11 @@ add_subdirectory(Third_Party)
 ########################################################################
 add_subdirectory(Configs)
 
+########################################################################
+# Building Libraries and modules                                       #
+########################################################################
+add_subdirectory(libs)
+
 #include_directories(${CMAKE_ROOT}/external/stlsoft-1.9.116/include)
 #set( ENV{STLSOFT}  ${CMAKE_CURRENT_BINARY_DIR}/stlsoft-1.9.116)
 
@@ -59,4 +62,3 @@ add_subdirectory(src)
 ########################################################################
 file(WRITE ${TMP}/make_wrapper_script.bat "rem Warper makefile created autmoaticly\n" )
 file(APPEND ${TMP}/make_wrapper_script.bat "set STLSOFT=${External_tools_SOURCE_DIR}/${STL_VER}\n")
-file(APPEND ${TMP}/make_wrapper_script.bat "nmake\n")

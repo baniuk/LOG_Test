@@ -43,9 +43,9 @@ IF (${MSVC_VERSION} EQUAL 1600)	# MSVC10
 	set(PANTH_MAKEFILE_PATH build/vc10.x64)
 ELSEIF (${MSVC_VERSION} GREATER 1600)	#MSVC11
 	set(PANTH_MAKEFILE_PATH build/vc11.x64)
-ELSE (${MSVC_VERSION} GREATER 1600)
-	MESSAGE(FATAL_ERROR "Setup correct makefile fo Pantheios") 	
-ENDIF(${MSVC_VERSION} EQUAL 1600)
+ELSE ()
+	MESSAGE(FATAL_ERROR "Setup correct makefile for Pantheios") 	
+ENDIF()
 ExternalProject_Add(	Pantheios
 						PREFIX ${TMP}
 						TMP_DIR ${TMP}

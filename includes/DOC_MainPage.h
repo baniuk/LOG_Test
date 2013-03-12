@@ -9,6 +9,7 @@
 *		-# Narzêdzia dla unixa w katalogu external_tools
 *		-# Kompilacja MP jak w dokumentacji w EverNote /OpenSceneGraph/trunk – osg\n
 *		-# poprawiæ gitignore bo nie wszêdzie bêdzie potrzebny w przypdku out-of-source build
+*		-# U¿yc instalacji ¿eby kopiowac liby do okreslonego katalogu, np bin - gotowe biblioteki, build - œmieci podczas kompilacji
 */
 
 /** \mainpage Test bibliotek logujacych oraz budowa struktury projektu
