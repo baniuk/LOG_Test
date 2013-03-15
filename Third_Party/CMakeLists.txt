@@ -14,11 +14,9 @@ set(STL_VER stlsoft-1.9.117 CACHE STRING "")
 execute_process(COMMAND ${WGET_EXECUTABLE} -N http://sourceforge.net/projects/stlsoft/files/STLSoft%201.9/1.9.117/stlsoft-1.9.117-hdrs.zip/download
 					WORKING_DIRECTORY ${TMP})
 # pobieranie Pantheios				
-execute_process(COMMAND ${WGET_EXECUTABLE} -N http://sourceforge.net/projects/pantheios/files/Pantheios%20%28C%20and%20Cxx%29/1.0.1%20%28beta%20214%29/pantheios-1.0.1-beta214-src.zip/download
-				WORKING_DIRECTORY ${TMP})
+
 # wypakowywanie				
 execute_process(COMMAND ${ZIP_EXECUTABLE} -u ${TMP}/${STL_VER}-hdrs.zip -d ${External_tools_SOURCE_DIR}) 	
-execute_process(COMMAND ${ZIP_EXECUTABLE} -u ${TMP}/${PANTHEIOS_VER}-src.zip -d ${External_tools_SOURCE_DIR})
 ########################################################################
 # Patche dla VS12            										   #	
 ######################################################################## 
@@ -29,9 +27,10 @@ IF ( ${MSVC} )
 	execute_process(COMMAND ${WGET_EXECUTABLE} -O PANTH.diff http://sourceforge.net/tracker/download.php?group_id=141831&atid=750759&file_id=456644&aid=3587889 WORKING_DIRECTORY ${TMP})
 	execute_process(COMMAND ${WGET_EXECUTABLE} -O PANT.zip http://sourceforge.net/tracker/download.php?group_id=141831&atid=750759&file_id=456645&aid=3587889 WORKING_DIRECTORY ${TMP})
 	
-	execute_process(COMMAND ${ZIP_EXECUTABLE} -u ${TMP}/PANT.zip -d ${External_tools_SOURCE_DIR}/${PANTHEIOS_VER}/build) 	
-	execute_process(COMMAND ${PATCH_EXECUTABLE} -p0 -d ${External_tools_SOURCE_DIR}/${PANTHEIOS_VER} -i ${TMP}/PANTH.diff) 	
-	execute_process(COMMAND ${PATCH_EXECUTABLE} -p0 -d ${External_tools_SOURCE_DIR}/${STL_VER} -i ${TMP}/STL.diff) 
+	# trzeba tworzyc katalogi wczesniej i dopiero rozpakowac tak aby ropakowany panheios poprostu sie doda³ do teg okatlaogu
+#	execute_process(COMMAND ${ZIP_EXECUTABLE} -u ${TMP}/PANT.zip -d ${External_tools_SOURCE_DIR}/${PANTHEIOS_VER}/build) 	
+#	execute_process(COMMAND ${PATCH_EXECUTABLE} -p0 -d ${External_tools_SOURCE_DIR}/${PANTHEIOS_VER} -i ${TMP}/PANTH.diff) 	
+#	execute_process(COMMAND ${PATCH_EXECUTABLE} -p0 -d ${External_tools_SOURCE_DIR}/${STL_VER} -i ${TMP}/STL.diff) 
 ENDIF ( ${MSVC} )
 	
 ########################################################################
@@ -46,13 +45,15 @@ ELSEIF (${MSVC_VERSION} GREATER 1600)	#MSVC11
 ELSE ()
 	MESSAGE(FATAL_ERROR "Setup correct makefile for Pantheios") 	
 ENDIF()
+
+# jak jest ustawiony projekt na œci¹ganie to œci¹g do source dir
 ExternalProject_Add(	Pantheios
 						PREFIX ${TMP}
-						TMP_DIR ${TMP}
-						STAMP_DIR ${TMP}
-						SOURCE_DIR ${External_tools_SOURCE_DIR}/${PANTHEIOS_VER}/${PANTH_MAKEFILE_PATH}
+						URL http://sourceforge.net/projects/pantheios/files/Pantheios%20%28C%20and%20Cxx%29/1.0.1%20%28beta%20214%29/pantheios-1.0.1-beta214-src.zip
+						SOURCE_DIR ${External_tools_SOURCE_DIR}/${PANTHEIOS_VER}
+						UPDATE_COMMAND ${ZIP_EXECUTABLE} -u ${TMP}/PANT.zip -d ${External_tools_SOURCE_DIR}/${PANTHEIOS_VER}/build
 						CONFIGURE_COMMAND ""
-						BUILD_COMMAND ${MAKE}
+						BUILD_COMMAND cd ${PANTH_MAKEFILE_PATH} && ${CMAKE_BUILD_TOOL}
 						BUILD_IN_SOURCE 1
 						INSTALL_COMMAND ""						
 					)	

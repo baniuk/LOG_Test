@@ -6,7 +6,7 @@ macro(config_compiler_and_linker)
 		SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /MP")
 	ENDIF(MSVC)  
 
-	endmacro()
+endmacro()
 
 ########################################################################
 # Setting tools                                                        #
