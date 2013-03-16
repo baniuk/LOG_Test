@@ -18,7 +18,7 @@ if [ $PARAM = "ALL" ] ; then
 	rm -rf CMake_trash
 	rm -rf doc/html
 	find .  -type f -name Makefile -print -exec rm -rf {} \;
-	find ./Third_Party -type d -name * rm -rf {} \;
+	find ./Third_Party/* -type d -name * -exec rm -rf {} \;
 fi	
 
 
