@@ -3,8 +3,11 @@
 macro(config_compiler_and_linker)
 
 	IF (MSVC)
+		MESSAGE(STATUS "MSVC detected - Adding compiler flags")
 		SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /MP")
-	ENDIF(MSVC)  
+	ELSEIF (CMAKE_COMPILER_IS_GNUCXX)
+		MESSAGE(STATUS "GCC detected - Adding compiler flags")	
+	ENDIF()  
 
 endmacro()
 
