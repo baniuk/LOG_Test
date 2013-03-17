@@ -1,5 +1,15 @@
 # cmake utils and macros
 
+########################################################################
+# Finds all packages                                                   #
+########################################################################
+macro(find_all_required_packages)
+	find_package(Subversion REQUIRED)
+	find_package(Doxygen REQUIRED)
+
+
+endmacro()
+
 macro(config_compiler_and_linker)
 
 	IF (MSVC)

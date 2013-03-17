@@ -8,18 +8,14 @@
 # Linux
 # Dla linuxa wymaga 	python-dev
 #			libbz2-dev
+# 			gcc 4.4.5 - ma znaczenie dla Panth i boosta
 
 cmake_minimum_required (VERSION 2.8) 
-########################################################################
-# Finding required packages   
-# \todo - reakcja jak nie znajdzie do zrobienia                        #
-########################################################################
-find_package(Subversion REQUIRED)
-find_package(Doxygen REQUIRED)
 
 # Define helper functions and macros
 include(CMake/internal_utils.cmake)
 
+find_all_required_packages()
 config_compiler_and_linker()  # Defined in internal_utils.cmake.
 
 ########################################################################

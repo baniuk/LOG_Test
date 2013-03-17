@@ -10,6 +10,7 @@ project (External_tools)
 # Wersje narzêdzi i katalogi do jakich siê rozpakuj¹, trzeba URL tez zmieniaæ jak by co
 set(PANTHEIOS_VER pantheios-1.0.1-beta214 CACHE STRING "")
 set(STL_VER stlsoft-1.9.117 CACHE STRING "")
+set(BOOST_VER 1.53.0 )
 
 ########################################################################
 # Patche dla VS12            										   #	
@@ -41,14 +42,22 @@ ExternalProject_Add(	STLSoft
 # JEst to pe³en projekt, generuje wszystkie wersje libów			   #	
 ######################################################################## 	
 # W zalezonosci od wersji ró¿ne makefile w projekcie
-IF (${MSVC_VERSION} EQUAL 1600)	# MSVC10
-	set(PANTH_MAKEFILE_PATH build/vc10.x64)
-ELSEIF (${MSVC_VERSION} GREATER 1600)	#MSVC11
-	set(PANTH_MAKEFILE_PATH build/vc11.x64)
-ELSEIF (${CMAKE_COMPILER_IS_GNUCXX})
-	
+IF (${WIN32})
+	IF (${MSVC_VERSION} EQUAL 1600)	# MSVC10
+		set(PANTH_MAKEFILE_PATH build/vc10.x64)
+	ELSEIF (${MSVC_VERSION} GREATER 1600)	#MSVC11
+		set(PANTH_MAKEFILE_PATH build/vc11.x64)
+	ELSE (${MSVC_VERSION})
+		MESSAGE(FATAL_ERROR "Setup correct makefile for Pantheios for WiN32")
+	ENDIF (${MSVC_VERSION})
+ELSEIF (${UNIX})		
+	IF (${CMAKE_COMPILER_IS_GNUCXX})
+		set(PANTH_MAKEFILE_PATH build/gcc44.unix.file64bit)
+	ELSE (${CMAKE_COMPILER_IS_GNUCXX})
+		MESSAGE(FATAL_ERROR "Setup correct makefile for Pantheios for UNIX")
+	ENDIF (${CMAKE_COMPILER_IS_GNUCXX})	
 ELSE ()
-	MESSAGE(FATAL_ERROR "Setup correct makefile for Pantheios") 	
+	MESSAGE(FATAL_ERROR "Wrong system")
 ENDIF()
 
 # jak jest ustawiony projekt na œci¹ganie to œci¹g do source dir
@@ -97,28 +106,34 @@ ExternalProject_Add(	googletest
 # linkowanie dynamiczne tylko w windows
 
 # ustawiæ scie¿ki do bibliotek bo ró¿ni¹ siê w zaleznoœci od systemu
-IF (${MSVC_VERSION} EQUAL 1600)	# MSVC10
-	set(BOOST_TOOLSET msvc-10.0)
+IF (${WIN32})
 	set(BOOST_BOOTSTRAP bootstrap.bat)
 	set(BOOST_BUILD_CMD b2)
-ELSEIF (${MSVC_VERSION} GREATER 1600)	#MSVC11
-	set(BOOST_TOOLSET msvc-11.0)
-	set(BOOST_BOOTSTRAP bootstrap.bat)
-	set(BOOST_BUILD_CMD b2)
-ELSEIF (${CMAKE_COMPILER_IS_GNUCXX})
+	IF (${MSVC_VERSION} EQUAL 1600)	# MSVC10
+		set(BOOST_TOOLSET msvc-10.0)
+	ELSEIF (${MSVC_VERSION} GREATER 1600)	#MSVC11
+		set(BOOST_TOOLSET msvc-11.0)
+	ELSE (${MSVC_VERSION})
+		MESSAGE(FATAL_ERROR "Setup correct makefile for BOOST for WiN32")
+	ENDIF (${MSVC_VERSION})
+ELSEIF (${UNIX})	
 	set(BOOST_BUILD_CMD ./b2)
 	set(BOOST_BOOTSTRAP ./bootstrap.sh)
-	set(BOOST_TOOLSET gcc-4.4.5)
+	IF (${CMAKE_COMPILER_IS_GNUCXX})
+		set(BOOST_TOOLSET gcc-4.4.5)
+	ELSE (${CMAKE_COMPILER_IS_GNUCXX})
+		MESSAGE(FATAL_ERROR "Setup correct makefile for BOOST for UNIX")
+	ENDIF (${CMAKE_COMPILER_IS_GNUCXX})	
 ELSE ()
-	MESSAGE(FATAL_ERROR "Setup correct makefile for boost") 	
-ENDIF()				
-set( Boost_Version 1.53.0 )
-string( REPLACE "." "_" Boost_Version_Underscore ${Boost_Version} )
-message( STATUS "Boost_Version: " ${Boost_Version} )
+	MESSAGE(FATAL_ERROR "Wrong system")
+ENDIF()
+			
+string( REPLACE "." "_" Boost_Version_Underscore ${BOOST_VER} )
+message( STATUS "Boost_Version: " ${BOOST_VER} )
 ExternalProject_Add( 	Boost
 						PREFIX ${TMP}
 						SOURCE_DIR ${External_tools_SOURCE_DIR}/boost
-						URL http://downloads.sourceforge.net/project/boost/boost/${Boost_Version}/boost_${Boost_Version_Underscore}.zip
+						URL http://downloads.sourceforge.net/project/boost/boost/${BOOST_VER}/boost_${Boost_Version_Underscore}.zip
 						UPDATE_COMMAND ${BOOST_BOOTSTRAP}
 						CONFIGURE_COMMAND ""
 						BUILD_COMMAND ${BOOST_BUILD_CMD} address-model=64 toolset=${BOOST_TOOLSET} link=static stage
