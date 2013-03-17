@@ -108,6 +108,7 @@ ELSEIF (${MSVC_VERSION} GREATER 1600)	#MSVC11
 ELSEIF (${CMAKE_COMPILER_IS_GNUCXX})
 	set(BOOST_BUILD_CMD ./b2)
 	set(BOOST_BOOTSTRAP ./bootstrap.sh)
+	set(BOOST_TOOLSET gcc-4.4.5)
 ELSE ()
 	MESSAGE(FATAL_ERROR "Setup correct makefile for boost") 	
 ENDIF()				
