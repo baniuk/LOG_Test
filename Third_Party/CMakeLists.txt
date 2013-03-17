@@ -100,11 +100,15 @@ ExternalProject_Add(	googletest
 IF (${MSVC_VERSION} EQUAL 1600)	# MSVC10
 	set(BOOST_TOOLSET msvc-10.0)
 	set(BOOST_BOOTSTRAP bootstrap.bat)
+	set(BOOST_BUILD_CMD b2)
 ELSEIF (${MSVC_VERSION} GREATER 1600)	#MSVC11
 	set(BOOST_TOOLSET msvc-11.0)
 	set(BOOST_BOOTSTRAP bootstrap.bat)
+	set(BOOST_BUILD_CMD b2)
 ELSEIF (${CMAKE_COMPILER_IS_GNUCXX})
-	
+	set(BOOST_BUILD_CMD ./b2)
+	set(BOOST_BOOTSTRAP ./bootstrap.sh)
+	set(BOOST_TOOLSET gcc-4.4.5)
 ELSE ()
 	MESSAGE(FATAL_ERROR "Setup correct makefile for boost") 	
 ENDIF()				
@@ -117,7 +121,7 @@ ExternalProject_Add( 	Boost
 						URL http://downloads.sourceforge.net/project/boost/boost/${Boost_Version}/boost_${Boost_Version_Underscore}.zip
 						UPDATE_COMMAND ${BOOST_BOOTSTRAP}
 						CONFIGURE_COMMAND ""
-						BUILD_COMMAND b2 address-model=64 toolset=${BOOST_TOOLSET} link=static stage
+						BUILD_COMMAND ${BOOST_BUILD_CMD} address-model=64 toolset=${BOOST_TOOLSET} link=static stage
 						BUILD_IN_SOURCE 1
 						INSTALL_COMMAND ""
 					)

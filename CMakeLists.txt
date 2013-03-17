@@ -1,13 +1,18 @@
 ########################################################################
-# CMake build script for LOG_test.									   #
+# CMake build script for LOG_test.	                               #
 ########################################################################
 # Possible targets:
 # 	gtest_main gtest	- from gtest
 #	doc					- doxygen doc
 
+# Linux
+# Dla linuxa wymaga 	python-dev
+#			libbz2-dev
+
 cmake_minimum_required (VERSION 2.8) 
 ########################################################################
-# Finding required packages                                            #
+# Finding required packages   
+# \todo - reakcja jak nie znajdzie do zrobienia                        #
 ########################################################################
 find_package(Subversion REQUIRED)
 find_package(Doxygen REQUIRED)
