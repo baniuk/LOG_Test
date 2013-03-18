@@ -1,5 +1,6 @@
 ########################################################################
 # CMake build script for external tools								   #	
+# \todo dodaæ flagi kompilatora \MP ustawiane do zmiennej w external_utils w zalezonoœci od systemu
 ########################################################################
 project (External_tools) 
 
@@ -47,18 +48,18 @@ IF (${WIN32})
 		set(PANTH_MAKEFILE_PATH build/vc10.x64)
 	ELSEIF (${MSVC_VERSION} GREATER 1600)	#MSVC11
 		set(PANTH_MAKEFILE_PATH build/vc11.x64)
-	ELSE (${MSVC_VERSION})
+	ELSE (${MSVC_VERSION} EQUAL 1600)
 		MESSAGE(FATAL_ERROR "Setup correct makefile for Pantheios for WiN32")
-	ENDIF (${MSVC_VERSION})
+	ENDIF (${MSVC_VERSION} EQUAL 1600)
 ELSEIF (${UNIX})		
 	IF (${CMAKE_COMPILER_IS_GNUCXX})
 		set(PANTH_MAKEFILE_PATH build/gcc44.unix.file64bit)
 	ELSE (${CMAKE_COMPILER_IS_GNUCXX})
 		MESSAGE(FATAL_ERROR "Setup correct makefile for Pantheios for UNIX")
 	ENDIF (${CMAKE_COMPILER_IS_GNUCXX})	
-ELSE ()
+ELSE (${WIN32})
 	MESSAGE(FATAL_ERROR "Wrong system")
-ENDIF()
+ENDIF(${WIN32})
 
 # jak jest ustawiony projekt na œci¹ganie to œci¹g do source dir
 ExternalProject_Add(	Pantheios
@@ -113,9 +114,9 @@ IF (${WIN32})
 		set(BOOST_TOOLSET msvc-10.0)
 	ELSEIF (${MSVC_VERSION} GREATER 1600)	#MSVC11
 		set(BOOST_TOOLSET msvc-11.0)
-	ELSE (${MSVC_VERSION})
+	ELSE (${MSVC_VERSION} EQUAL 1600)
 		MESSAGE(FATAL_ERROR "Setup correct makefile for BOOST for WiN32")
-	ENDIF (${MSVC_VERSION})
+	ENDIF (${MSVC_VERSION} EQUAL 1600)
 ELSEIF (${UNIX})	
 	set(BOOST_BUILD_CMD ./b2)
 	set(BOOST_BOOTSTRAP ./bootstrap.sh)
@@ -124,9 +125,9 @@ ELSEIF (${UNIX})
 	ELSE (${CMAKE_COMPILER_IS_GNUCXX})
 		MESSAGE(FATAL_ERROR "Setup correct makefile for BOOST for UNIX")
 	ENDIF (${CMAKE_COMPILER_IS_GNUCXX})	
-ELSE ()
+ELSE (${WIN32})
 	MESSAGE(FATAL_ERROR "Wrong system")
-ENDIF()
+ENDIF(${WIN32})
 			
 string( REPLACE "." "_" Boost_Version_Underscore ${BOOST_VER} )
 message( STATUS "Boost_Version: " ${BOOST_VER} )
@@ -145,5 +146,5 @@ ExternalProject_Get_Property( Boost source_dir )
 ExternalProject_Get_Property( Boost binary_dir )
 set( Boost_INCLUDE_DIRS ${source_dir} )
 set( Boost_LIBRARIES debug;${binary_dir})		
-MESSAGE(STATUS ${Boost_INCLUDE_DIRS})	
-MESSAGE(STATUS ${Boost_LIBRARIES})			
+MESSAGE(STATUS "BOOST_INCLUDE_DIRS set to ${Boost_INCLUDE_DIRS}")	
+MESSAGE(STATUS "BOOST_LIBS_DIRS set to ${Boost_LIBRARIES}")			
