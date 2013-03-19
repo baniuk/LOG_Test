@@ -137,6 +137,7 @@ ExternalProject_Add( 	Boost
 						URL http://downloads.sourceforge.net/project/boost/boost/${BOOST_VER}/boost_${Boost_Version_Underscore}.zip
 						UPDATE_COMMAND ${BOOST_BOOTSTRAP}
 						CONFIGURE_COMMAND ""
+						# te parametr ymaj¹ wp³yw na poni¿sze œcie¿ki i nazwy bibliotek
 						BUILD_COMMAND ${BOOST_BUILD_CMD} address-model=64 toolset=${BOOST_TOOLSET} link=static stage
 						BUILD_IN_SOURCE 1
 						INSTALL_COMMAND ""
@@ -145,6 +146,8 @@ ExternalProject_Add( 	Boost
 ExternalProject_Get_Property( Boost source_dir )
 ExternalProject_Get_Property( Boost binary_dir )
 set( Boost_INCLUDE_DIRS ${source_dir} )
-set( Boost_LIBRARIES debug;${binary_dir})		
+# niepe³na œciezka do bibliotek, pocz¹tek zalezy od modu³u który linkujemy
+#\todo sprawdziæ czy w linuxie sa te same sciezki
+set( Boost_LIBRARIES debug;${binary_dir}/build/${BOOST_TOOLSET}/debug/address-model-64/link-static/threading-multi;optimized;${binary_dir}/build/${BOOST_TOOLSET}/release/address-model-64/link-static/threading-multi)		
 MESSAGE(STATUS "BOOST_INCLUDE_DIRS set to ${Boost_INCLUDE_DIRS}")	
 MESSAGE(STATUS "BOOST_LIBS_DIRS set to ${Boost_LIBRARIES}")			
