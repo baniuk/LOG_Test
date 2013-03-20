@@ -4,20 +4,24 @@
 # Finds all packages                                                   #
 ########################################################################
 macro(find_all_required_packages)
+	# Common packages
 	find_package(Subversion REQUIRED)
 	find_package(Doxygen REQUIRED)
-
-
+	# UNIX
+	IF ( ${UNIX} )
+#		find_package(wget REQUIRED) # powoduje bÅ‚Ä™dy - nie znaleziono findwget
+#		find_package(BZip2 REQUIRED)
+	ENDIF ( ${UNIX} )
 endmacro()
 
 macro(config_compiler_and_linker)
 
-	IF (MSVC)
+	IF ( ${MSVC} )
 		MESSAGE(STATUS "MSVC detected - Adding compiler flags")
 		SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /MP")
 	ELSEIF (CMAKE_COMPILER_IS_GNUCXX)
 		MESSAGE(STATUS "GCC detected - Adding compiler flags")	
-	ENDIF()  
+	ENDIF( ${MSVC} )  
 
 endmacro()
 
@@ -30,8 +34,10 @@ macro(set_project_tools)
 		set(ZIP_EXECUTABLE ${Test_SOURCE_DIR}/tools/unzip.exe CACHE FILEPATH "")
 		set(PATCH_EXECUTABLE ${Test_SOURCE_DIR}/tools/patch.exe CACHE FILEPATH "")
 	ELSEIF ( ${UNIX} )
-		# automatyczne szukanie narzêdzi, ustawia te same zmienne co wy¿ej
-	ELSE ( ${UNIX} )
+		set(WGET_EXECUTABLE wget CACHE FILEPATH "")
+		set(ZIP_EXECUTABLE unzip CACHE FILEPATH "")
+		set(PATCH_EXECUTABLE patch CACHE FILEPATH "")
+	ELSE ( ${WIN32} )
 		message(FATAL_ERROR "Unknown system")
 	ENDIF ( ${WIN32} )
 
