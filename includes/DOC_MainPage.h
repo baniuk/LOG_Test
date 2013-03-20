@@ -4,12 +4,12 @@
 *
 * This file contains main page for doc and some todos
 * \todo 
-*		-# Dorobiæ skrypt czyszcz¹cy ca³y projekt z pozosta³oœci CMake dla Unixa\n
-*		-# Zrobiæ jak w gtest osobny katlaog na pewne ustawienia i makra cmake (scie¿ki do narzedzi itp)\n
-*		-# Narzêdzia dla unixa w katalogu external_tools
-*		-# Kompilacja MP jak w dokumentacji w EverNote /OpenSceneGraph/trunk – osg\n
-*		-# poprawiæ gitignore bo nie wszêdzie bêdzie potrzebny w przypdku out-of-source build
+*		-# Dodac przelacznik -j xx do make na UNIX do kompilacji na xx rdzeni (Uwaga to jest tylko do make a nie do kompilatora)\n
+*		-# Narzêdzia dla unixa w katalogu external_tools\n
+*		-# Kompilacja MP na WIN - dodaÄ‡ do proejktÃ³w jako opcja kompilatora\n
 *		-# U¿yc instalacji ¿eby kopiowac liby do okreslonego katalogu, np bin - gotowe biblioteki, build - œmieci podczas kompilacji
+		-# Dla unixa nie tworzy wersji debug dla boosta. Przejzec takze katalogi dla bibliotek - zmienne sa zle zadeklarowane
+		
 */
 
 /** \mainpage Test bibliotek logujacych oraz budowa struktury projektu
