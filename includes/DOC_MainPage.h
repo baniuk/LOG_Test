@@ -4,11 +4,13 @@
 *
 * This file contains main page for doc and some todos
 * \todo 
-*		-# Dodac przelacznik -j xx do make na UNIX do kompilacji na xx rdzeni (Uwaga to jest tylko do make a nie do kompilatora)\n
-*		-# Narzêdzia dla unixa w katalogu external_tools\n
+*		-# MP dla Pantheiosa\n
+*		-# Narzêdzia dla unixa w katalogu external_tools - zglasza problem z find_package dla wget\n
 *		-# Kompilacja MP na WIN - dodaÄ‡ do proejktÃ³w jako opcja kompilatora\n
 *		-# U¿yc instalacji ¿eby kopiowac liby do okreslonego katalogu, np bin - gotowe biblioteki, build - œmieci podczas kompilacji
-		-# Dla unixa nie tworzy wersji debug dla boosta. Przejzec takze katalogi dla bibliotek - zmienne sa zle zadeklarowane
+*		-# Dla unixa nie tworzy wersji debug dla boosta. Nie da rady kompilowac dwÃ³ch wersji na raz jak w WIN. Problem znany na sieci.
+*		-# Przejzec takze katalogi dla bibliotek - zmienne sa zle zadeklarowane, katalog stage?? w BOOST
+*		-# Dla UNIXa  jest permision denied dla warper script
 		
 */
 
