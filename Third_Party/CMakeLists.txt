@@ -44,6 +44,7 @@ ExternalProject_Add(	STLSoft
 ######################################################################## 	
 # W zalezonosci od wersji ró¿ne makefile w projekcie
 IF (${WIN32})
+	set(SYSTEM_PATH_COMMAND ${PATCH_EXECUTABLE} -p0 -d ${External_tools_SOURCE_DIR}/${PANTHEIOS_VER} -i ${TMP}/PANTH.diff)
 	IF (${MSVC_VERSION} EQUAL 1600)	# MSVC10
 		set(PANTH_MAKEFILE_PATH build/vc10.x64)
 	ELSEIF (${MSVC_VERSION} GREATER 1600)	#MSVC11
@@ -68,7 +69,7 @@ ExternalProject_Add(	Pantheios
 						URL http://sourceforge.net/projects/pantheios/files/Pantheios%20%28C%20and%20Cxx%29/1.0.1%20%28beta%20214%29/pantheios-1.0.1-beta214-src.zip
 						SOURCE_DIR ${External_tools_SOURCE_DIR}/${PANTHEIOS_VER}
 						UPDATE_COMMAND ${ZIP_EXECUTABLE} -u ${TMP}/PANT.zip -d ${External_tools_SOURCE_DIR}/${PANTHEIOS_VER}/build
-						PATCH_COMMAND ${PATCH_EXECUTABLE} -p0 -d ${External_tools_SOURCE_DIR}/${PANTHEIOS_VER} -i ${TMP}/PANTH.diff
+						PATCH_COMMAND ${SYSTEM_PATH_COMMAND}
 						CONFIGURE_COMMAND ""
 						BUILD_COMMAND cd ${PANTH_MAKEFILE_PATH} && ${CMAKE_BUILD_TOOL}
 						BUILD_IN_SOURCE 1
@@ -146,8 +147,6 @@ ExternalProject_Add( 	Boost
 ExternalProject_Get_Property( Boost source_dir )
 ExternalProject_Get_Property( Boost binary_dir )
 set( Boost_INCLUDE_DIRS ${source_dir} )
-# niepe³na œciezka do bibliotek, pocz¹tek zalezy od modu³u który linkujemy
-# koncÃ³wka scierzek, zlaezna od biblioteki. Przy linkowaniu bedzie trzeba wskazac katlaog gdzie jest dana biblioteka
-set( Boost_LIBRARIES debug;build/${BOOST_TOOLSET}/debug/address-model-64/link-static/threading-multi;optimized;build/${BOOST_TOOLSET}/release/address-model-64/link-static/threading-multi)		
+set( Boost_LIBRARIES ${binary_dir}/stage)		
 MESSAGE(STATUS "BOOST_INCLUDE_DIRS set to ${Boost_INCLUDE_DIRS}")	
 MESSAGE(STATUS "BOOST_LIBS_DIRS set to ${Boost_LIBRARIES}")			
