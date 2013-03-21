@@ -1,13 +1,14 @@
 Major
-MA0001	Dla unixa nie tworzy wersji debug dla boosta. Nie da rady kompilowac dwÃ³ch wersji na raz jak w WIN. Problem znany na sieci.
-MA0002	Dla UNIXa jest permision denied dla warper script (kwestia rozszerzenia oraz uruchomienia jako ./ moze)
+MA0001	UNIX:	nie tworzy wersji debug dla boosta. Nie da rady kompilowac dwÃ³ch wersji na raz jak w WIN. Problem znany na sieci.
+MA0002	UNIX:	jest permision denied dla warper script (kwestia rozszerzenia oraz uruchomienia jako ./ moze)
+MA0003	UNIX:	Nie kompiluje siê Pantheios, brak ptchowania
 
 Minor
-MI0001	Narzêdzia dla unixa w katalogu external_tools - zglasza problem z find_package dla wget
+MI0001	UNIX:	Narzêdzia dla unixa w katalogu external_tools - zglasza problem z find_package dla wget
 
 Fixes
-F0001	MP dla Pantheiosa dla Windows
-F0002	MP dla Pantheiosa dla UNIXa
+F0001	WIN:	MP dla Pantheiosa dla Windows
+F0002	UNIX:	MP dla Pantheiosa dla UNIXa
 
 Ideas
 I0001	U¿yc instalacji ¿eby kopiowac liby do okreslonego katalogu, np bin - gotowe biblioteki, build - œmieci podczas kompilacji
