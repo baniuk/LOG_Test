@@ -1,10 +1,12 @@
 Czysci projekt
+./bin/Third_Party/GTest/src/googletest-build/cmake_install.cmake
 ./bin/Third_Party/cmake_install.cmake
 ./bin/libs/cmake_install.cmake
 ./bin/libs/Package1/cmake_install.cmake
 ./bin/Configs/cmake_install.cmake
 ./bin/cmake_install.cmake
 ./bin/src/cmake_install.cmake
+find: `./bin/Third_Party/GTest/src/googletest-build/CMakeFiles': No such file or directory
 find: `./bin/Third_Party/CMakeFiles': No such file or directory
 find: `./bin/libs/CMakeFiles': No such file or directory
 find: `./bin/libs/Package1/CMakeFiles': No such file or directory
@@ -39,49 +41,16 @@ find: `./Third_Party/stlsoft-1.9.117': No such file or directory
 -- Check for working CXX compiler: /usr/bin/c++ -- works
 -- Detecting CXX compiler ABI info
 -- Detecting CXX compiler ABI info - done
--- Patching sources
---2013-03-20 10:42:31--  http://sourceforge.net/tracker/download.php?group_id=141831&atid=750759&file_id=456644&aid=3587889
-Resolving sourceforge.net... 216.34.181.60
-Connecting to sourceforge.net|216.34.181.60|:80... connected.
-HTTP request sent, awaiting response... 200 OK
-Length: 1061 (1.0K) [application/octet-stream]
-Saving to: “PANTH.diff”
-
-     0K .                                                     100% 46.0M=0s
-
-2013-03-20 10:42:31 (46.0 MB/s) - “PANTH.diff” saved [1061/1061]
-
---2013-03-20 10:42:31--  http://sourceforge.net/tracker/download.php?group_id=141831&atid=750759&file_id=456645&aid=3587889
-Resolving sourceforge.net... 216.34.181.60
-Connecting to sourceforge.net|216.34.181.60|:80... connected.
-HTTP request sent, awaiting response... 200 OK
-Length: 183434 (179K) [application/zip]
-Saving to: “PANT.zip”
-
-     0K .......... .......... .......... .......... .......... 27%  127K 1s
-    50K .......... .......... .......... .......... .......... 55%  369K 0s
-   100K .......... .......... .......... .......... .......... 83%  359K 0s
-   150K .......... .......... .........                       100% 11.4M=0.7s
-
-2013-03-20 10:42:32 (267 KB/s) - “PANT.zip” saved [183434/183434]
-
-CMake Warning (dev) at /usr/share/cmake-2.8/Modules/ExternalProject.cmake:167 (message):
-  unknown ExternalProject_Add keyword: LOG_DOWNLOAD
-Call Stack (most recent call first):
-  /usr/share/cmake-2.8/Modules/ExternalProject.cmake:1131 (_ep_parse_arguments)
-  Third_Party/CMakeLists.txt:83 (ExternalProject_Add)
-This warning is for project developers.  Use -Wno-dev to suppress it.
-
 -- Boost_Version: 1.53.0
 -- BOOST_INCLUDE_DIRS set to /home/baniuk/LOG_test/Third_Party/boost
--- BOOST_LIBS_DIRS set to debug;build/gcc-4.4.5/debug/address-model-64/link-static/threading-multi;optimized;build/gcc-4.4.5/release/address-model-64/link-static/threading-multi
+-- BOOST_LIBS_DIRS set to /home/baniuk/LOG_test/Third_Party/boost/stage
 -- LIN
 -- Doxygen found at /usr/bin/doxygen
 -- Configuring done
 Generate graphviz: /home/baniuk/LOG_test/CMake_trash/ARCH.dot
 -- Generating done
 -- Build files have been written to: /home/baniuk/LOG_test/bin
-./build.sh: line 7: ../CMake_trash/make_wrapper_script.bat: Permission denied
+STLSOFT set
 Scanning dependencies of target Boost
 [  0%] Creating directories for 'Boost'
 [  0%] Performing download step (download, verify and extract) for 'Boost'
@@ -277,34 +246,34 @@ Component configuration:
 ...patience...
 ...found 8455 targets...
 ...updating 561 targets...
-common.mkdir bin.v2/libs/atomic
 common.mkdir stage
+common.mkdir bin.v2/libs/atomic
 common.mkdir bin.v2/libs/system
 common.mkdir bin.v2/libs/chrono
 common.mkdir bin.v2/libs/atomic/build
-common.mkdir stage/lib
 common.mkdir bin.v2/libs/system/build
 common.mkdir bin.v2/libs/chrono/build
+common.mkdir stage/lib
 common.mkdir bin.v2/libs/atomic/build/gcc-4.4.5
-common.mkdir bin.v2/libs/context/build
-common.mkdir bin.v2/libs/chrono/build/gcc-4.4.5
 common.mkdir bin.v2/libs/system/build/gcc-4.4.5
-common.mkdir bin.v2/libs/chrono/build/gcc-4.4.5/release
+common.mkdir bin.v2/libs/chrono/build/gcc-4.4.5
+common.mkdir bin.v2/libs/context/build
+common.mkdir bin.v2/libs/atomic/build/gcc-4.4.5/release
 common.mkdir bin.v2/libs/system/build/gcc-4.4.5/release
 common.mkdir bin.v2/libs/context/build/gcc-4.4.5
-common.mkdir bin.v2/libs/chrono/build/gcc-4.4.5/release/address-model-64
-common.mkdir bin.v2/libs/atomic/build/gcc-4.4.5/release
+common.mkdir bin.v2/libs/chrono/build/gcc-4.4.5/release
 common.mkdir bin.v2/libs/system/build/gcc-4.4.5/release/address-model-64
-common.mkdir bin.v2/libs/context/build/gcc-4.4.5/release
 common.mkdir bin.v2/libs/atomic/build/gcc-4.4.5/release/address-model-64
-common.mkdir bin.v2/libs/chrono/build/gcc-4.4.5/release/address-model-64/link-static
+common.mkdir bin.v2/libs/chrono/build/gcc-4.4.5/release/address-model-64
+common.mkdir bin.v2/libs/context/build/gcc-4.4.5/release
 common.mkdir bin.v2/libs/system/build/gcc-4.4.5/release/address-model-64/link-static
-common.mkdir bin.v2/libs/context/build/gcc-4.4.5/release/address-model-64
-common.mkdir bin.v2/libs/chrono/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi
-common.mkdir bin.v2/libs/system/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi
 common.mkdir bin.v2/libs/atomic/build/gcc-4.4.5/release/address-model-64/link-static
-common.mkdir bin.v2/libs/context/build/gcc-4.4.5/release/address-model-64/link-static
+common.mkdir bin.v2/libs/chrono/build/gcc-4.4.5/release/address-model-64/link-static
+common.mkdir bin.v2/libs/context/build/gcc-4.4.5/release/address-model-64
+common.mkdir bin.v2/libs/system/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi
 common.mkdir bin.v2/libs/atomic/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi
+common.mkdir bin.v2/libs/chrono/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi
+common.mkdir bin.v2/libs/context/build/gcc-4.4.5/release/address-model-64/link-static
 gcc.compile.c++ bin.v2/libs/atomic/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/lockpool.o
 gcc.archive bin.v2/libs/atomic/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/libboost_atomic.a
 common.copy stage/lib/libboost_atomic.a
@@ -337,31 +306,31 @@ common.mkdir bin.v2/libs/exception/build/gcc-4.4.5/release
 common.mkdir bin.v2/libs/exception/build/gcc-4.4.5/release/address-model-64
 common.mkdir bin.v2/libs/exception/build/gcc-4.4.5/release/address-model-64/link-static
 common.mkdir bin.v2/libs/exception/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi
-gcc.compile.c++ bin.v2/libs/date_time/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/gregorian/greg_weekday.o
+gcc.compile.c++ bin.v2/libs/date_time/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/gregorian/date_generators.o
 common.mkdir bin.v2/libs/filesystem
 common.mkdir bin.v2/libs/filesystem/build
+gcc.compile.c++ bin.v2/libs/exception/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/clone_current_exception_non_intrusive.o
 common.mkdir bin.v2/libs/filesystem/build/gcc-4.4.5
 common.mkdir bin.v2/libs/filesystem/build/gcc-4.4.5/release
 common.mkdir bin.v2/libs/filesystem/build/gcc-4.4.5/release/address-model-64
-common.mkdir bin.v2/libs/filesystem/build/gcc-4.4.5/release/address-model-64/link-static
-common.mkdir bin.v2/libs/filesystem/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi
-gcc.compile.c++ bin.v2/libs/exception/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/clone_current_exception_non_intrusive.o
 gcc.archive bin.v2/libs/exception/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/libboost_exception.a
+common.mkdir bin.v2/libs/filesystem/build/gcc-4.4.5/release/address-model-64/link-static
 common.copy stage/lib/libboost_exception.a
-gcc.compile.c++ bin.v2/libs/date_time/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/gregorian/date_generators.o
+common.mkdir bin.v2/libs/filesystem/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi
+common.mkdir bin.v2/libs/regex/build/gcc-4.4.5/release
+gcc.compile.c++ bin.v2/libs/date_time/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/gregorian/greg_weekday.o
 gcc.compile.c++ bin.v2/libs/filesystem/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/codecvt_error_category.o
 gcc.compile.c++ bin.v2/libs/filesystem/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/path_traits.o
 gcc.compile.c++ bin.v2/libs/filesystem/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/path.o
 gcc.compile.c++ bin.v2/libs/filesystem/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/portability.o
-gcc.compile.c++ bin.v2/libs/date_time/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/gregorian/greg_month.o
-gcc.archive bin.v2/libs/date_time/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/libboost_date_time.a
-common.copy stage/lib/libboost_date_time.a
 gcc.compile.c++ bin.v2/libs/filesystem/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/utf8_codecvt_facet.o
-common.mkdir bin.v2/libs/regex/build/gcc-4.4.5/release
+gcc.compile.c++ bin.v2/libs/filesystem/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/windows_file_codecvt.o
 common.mkdir bin.v2/libs/regex/build/gcc-4.4.5/release/address-model-64
 common.mkdir bin.v2/libs/regex/build/gcc-4.4.5/release/address-model-64/link-static
 common.mkdir bin.v2/libs/regex/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi
-gcc.compile.c++ bin.v2/libs/filesystem/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/windows_file_codecvt.o
+gcc.compile.c++ bin.v2/libs/date_time/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/gregorian/greg_month.o
+gcc.archive bin.v2/libs/date_time/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/libboost_date_time.a
+common.copy stage/lib/libboost_date_time.a
 gcc.compile.c++ bin.v2/libs/filesystem/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/unique_path.o
 gcc.compile.c++ bin.v2/libs/filesystem/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/operations.o
 gcc.archive bin.v2/libs/filesystem/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/libboost_filesystem.a
@@ -379,8 +348,8 @@ gcc.compile.c++ bin.v2/libs/regex/build/gcc-4.4.5/release/address-model-64/link-
 gcc.compile.c++ bin.v2/libs/regex/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/w32_regex_traits.o
 gcc.compile.c++ bin.v2/libs/regex/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/wc_regex_traits.o
 gcc.compile.c++ bin.v2/libs/regex/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/posix_api.o
+gcc.compile.c++ bin.v2/libs/regex/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/cregex.o
 gcc.compile.c++ bin.v2/libs/regex/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/instances.o
-gcc.compile.c++ bin.v2/libs/regex/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/usinstances.o
 common.mkdir bin.v2/libs/graph
 common.mkdir bin.v2/libs/graph/build
 common.mkdir bin.v2/libs/graph/build/gcc-4.4.5
@@ -388,7 +357,7 @@ common.mkdir bin.v2/libs/graph/build/gcc-4.4.5/release
 common.mkdir bin.v2/libs/graph/build/gcc-4.4.5/release/address-model-64
 common.mkdir bin.v2/libs/graph/build/gcc-4.4.5/release/address-model-64/link-static
 common.mkdir bin.v2/libs/graph/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi
-gcc.compile.c++ bin.v2/libs/regex/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/cregex.o
+gcc.compile.c++ bin.v2/libs/regex/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/usinstances.o
 gcc.compile.c++ bin.v2/libs/regex/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/wide_posix_api.o
 common.mkdir bin.v2/libs/iostreams
 common.mkdir bin.v2/libs/iostreams/build
@@ -418,9 +387,9 @@ gcc.compile.c++ bin.v2/libs/locale/build/gcc-4.4.5/release/address-model-64/link
 gcc.compile.c++ bin.v2/libs/graph/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/graphml.o
 gcc.compile.c++ bin.v2/libs/graph/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/read_graphviz_new.o
 gcc.archive bin.v2/libs/graph/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/libboost_graph.a
+gcc.compile.c++ bin.v2/libs/locale/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/shared/date_time.o
 common.copy stage/lib/libboost_graph.a
 gcc.compile.c++ bin.v2/libs/locale/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/shared/formatting.o
-gcc.compile.c++ bin.v2/libs/locale/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/shared/date_time.o
 gcc.compile.c++ bin.v2/libs/locale/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/shared/ids.o
 gcc.compile.c++ bin.v2/libs/locale/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/shared/generator.o
 common.mkdir bin.v2/libs/locale/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/util
@@ -440,7 +409,7 @@ gcc.compile.c++ bin.v2/libs/locale/build/gcc-4.4.5/release/address-model-64/link
 gcc.compile.c++ bin.v2/libs/locale/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/std/collate.o
 gcc.compile.c++ bin.v2/libs/locale/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/std/converter.o
 gcc.compile.c++ bin.v2/libs/locale/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/posix/posix_backend.o
-gcc.compile.c++ bin.v2/libs/locale/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/util/gregorian.o
+gcc.compile.c++ bin.v2/libs/locale/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/std/std_backend.o
 common.mkdir bin.v2/libs/math/build
 common.mkdir bin.v2/libs/math/build/gcc-4.4.5
 common.mkdir bin.v2/libs/math/build/gcc-4.4.5/release
@@ -450,7 +419,7 @@ common.mkdir bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-stat
 common.mkdir bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/..
 common.mkdir bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/../src
 common.mkdir bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/../src/tr1
-gcc.compile.c++ bin.v2/libs/locale/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/std/std_backend.o
+gcc.compile.c++ bin.v2/libs/locale/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/util/gregorian.o
 common.mkdir bin.v2/libs/math/config/gcc-4.4.5/release
 common.mkdir bin.v2/libs/math/config/gcc-4.4.5/release/address-model-64
 common.mkdir bin.v2/libs/math/config/gcc-4.4.5/release/address-model-64/link-static
@@ -463,27 +432,27 @@ common.mkdir bin.v2/libs/program_options/build/gcc-4.4.5/release
 common.mkdir bin.v2/libs/program_options/build/gcc-4.4.5/release/address-model-64
 common.mkdir bin.v2/libs/program_options/build/gcc-4.4.5/release/address-model-64/link-static
 common.mkdir bin.v2/libs/program_options/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi
-gcc.compile.c++ bin.v2/libs/locale/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/posix/numeric.o
-...on 200th target...
 gcc.compile.c++ bin.v2/libs/program_options/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/cmdline.o
+...on 200th target...
+gcc.compile.c++ bin.v2/libs/locale/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/posix/numeric.o
 gcc.compile.c++.pch bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/../src/tr1/pch.hpp.gch
 gcc.compile.c++ bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/assoc_laguerre.o
 gcc.compile.c++ bin.v2/libs/locale/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/std/numeric.o
 gcc.archive bin.v2/libs/locale/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/libboost_locale.a
 common.copy stage/lib/libboost_locale.a
 gcc.compile.c++ bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/assoc_legendre.o
-gcc.compile.c++ bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/beta.o
 gcc.compile.c++ bin.v2/libs/program_options/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/config_file.o
+gcc.compile.c++ bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/beta.o
 gcc.compile.c++ bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/comp_ellint_1.o
 gcc.compile.c++ bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/comp_ellint_2.o
 gcc.compile.c++ bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/comp_ellint_3.o
 gcc.compile.c++ bin.v2/libs/program_options/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/options_description.o
 gcc.compile.c++ bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/cyl_bessel_i.o
-gcc.compile.c++ bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/ellint_1.o
 gcc.compile.c++ bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/cyl_bessel_k.o
+gcc.compile.c++ bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/ellint_1.o
 gcc.compile.c++ bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/ellint_2.o
-gcc.compile.c++ bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/ellint_3.o
 gcc.compile.c++ bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/cyl_bessel_j.o
+gcc.compile.c++ bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/ellint_3.o
 gcc.compile.c++ bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/hermite.o
 gcc.compile.c++ bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/laguerre.o
 gcc.compile.c++ bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/legendre.o
@@ -494,8 +463,8 @@ gcc.compile.c++ bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-s
 gcc.compile.c++ bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/assoc_laguerref.o
 gcc.compile.c++ bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/assoc_legendref.o
 gcc.compile.c++ bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/betaf.o
-gcc.compile.c++ bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/comp_ellint_1f.o
 gcc.compile.c++ bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/sph_bessel.o
+gcc.compile.c++ bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/comp_ellint_1f.o
 gcc.compile.c++ bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/comp_ellint_2f.o
 gcc.compile.c++ bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/comp_ellint_3f.o
 gcc.compile.c++ bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/sph_neumann.o
@@ -513,10 +482,10 @@ gcc.compile.c++ bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-s
 gcc.compile.c++ bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/cyl_neumannf.o
 gcc.compile.c++ bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/sph_legendref.o
 gcc.compile.c++ bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/riemann_zetaf.o
-gcc.compile.c++ bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/assoc_laguerrel.o
 gcc.compile.c++ bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/expintf.o
-gcc.compile.c++ bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/assoc_legendrel.o
+gcc.compile.c++ bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/assoc_laguerrel.o
 gcc.compile.c++ bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/betal.o
+gcc.compile.c++ bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/assoc_legendrel.o
 gcc.compile.c++ bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/sph_besself.o
 gcc.compile.c++ bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/comp_ellint_1l.o
 gcc.compile.c++ bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/comp_ellint_2l.o
@@ -527,8 +496,8 @@ common.copy stage/lib/libboost_math_tr1f.a
 gcc.compile.c++ bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/cyl_bessel_il.o
 gcc.compile.c++ bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/cyl_bessel_kl.o
 gcc.compile.c++ bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/ellint_1l.o
-gcc.compile.c++ bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/cyl_bessel_jl.o
 gcc.compile.c++ bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/ellint_2l.o
+gcc.compile.c++ bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/cyl_bessel_jl.o
 gcc.compile.c++ bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/ellint_3l.o
 gcc.compile.c++ bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/hermitel.o
 gcc.compile.c++ bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/laguerrel.o
@@ -545,14 +514,14 @@ gcc.compile.c++ bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-s
 gcc.compile.c++ bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/erfc.o
 gcc.compile.c++ bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/erf.o
 gcc.compile.c++ bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/cbrt.o
-gcc.compile.c++ bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/expm1.o
 gcc.compile.c++ bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/fmax.o
+gcc.compile.c++ bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/expm1.o
 gcc.compile.c++ bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/sph_neumannl.o
-gcc.compile.c++ bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/fmin.o
 gcc.archive bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/libboost_math_tr1l.a
 common.copy stage/lib/libboost_math_tr1l.a
-gcc.compile.c++ bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/fpclassify.o
+gcc.compile.c++ bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/fmin.o
 gcc.compile.c++ bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/hypot.o
+gcc.compile.c++ bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/fpclassify.o
 gcc.compile.c++ bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/llround.o
 gcc.compile.c++ bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/log1p.o
 gcc.compile.c++ bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/lround.o
@@ -566,24 +535,24 @@ gcc.compile.c++ bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-s
 gcc.archive bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/libboost_math_c99.a
 common.copy stage/lib/libboost_math_c99.a
 gcc.compile.c++ bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/acoshf.o
-gcc.compile.c++ bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/atanhf.o
 gcc.compile.c++ bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/asinhf.o
+gcc.compile.c++ bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/atanhf.o
 gcc.compile.c++ bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/copysignf.o
-gcc.compile.c++ bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/erfcf.o
 gcc.compile.c++ bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/erff.o
+gcc.compile.c++ bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/erfcf.o
 gcc.compile.c++ bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/expm1f.o
 gcc.compile.c++ bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/fmaxf.o
 gcc.compile.c++ bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/fminf.o
 gcc.compile.c++ bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/fpclassifyf.o
 gcc.compile.c++ bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/cbrtf.o
 gcc.compile.c++ bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/hypotf.o
-gcc.compile.c++ bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/lgammaf.o
 gcc.compile.c++ bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/llroundf.o
 gcc.compile.c++ bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/log1pf.o
+gcc.compile.c++ bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/lgammaf.o
 gcc.compile.c++ bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/lroundf.o
 gcc.compile.c++ bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/nextafterf.o
-gcc.compile.c++ bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/nexttowardf.o
 gcc.compile.c++ bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/roundf.o
+gcc.compile.c++ bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/nexttowardf.o
 gcc.compile.c++ bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/tgammaf.o
 gcc.compile.c++ bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/truncf.o
 gcc.archive bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/libboost_math_c99f.a
@@ -601,8 +570,8 @@ gcc.compile.c++ bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-s
 gcc.compile.c++ bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/cbrtl.o
 gcc.compile.c++ bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/hypotl.o
 gcc.compile.c++ bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/llroundl.o
-gcc.compile.c++ bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/lgammal.o
 gcc.compile.c++ bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/log1pl.o
+gcc.compile.c++ bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/lgammal.o
 gcc.compile.c++ bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/lroundl.o
 gcc.compile.c++ bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/nextafterl.o
 gcc.compile.c++ bin.v2/libs/math/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/roundl.o
@@ -629,6 +598,7 @@ gcc.compile.c++ bin.v2/libs/python/build/gcc-4.4.5/release/address-model-64/link
 gcc.compile.c++ bin.v2/libs/program_options/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/split.o
 gcc.archive bin.v2/libs/program_options/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/libboost_program_options.a
 common.copy stage/lib/libboost_program_options.a
+gcc.compile.c++ bin.v2/libs/python/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/long.o
 gcc.compile.c++ bin.v2/libs/python/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/numeric.o
 ./boost/python/detail/destroy.hpp: In member function ‘bool boost::python::numeric::aux::array_base::isaligned() const’:
 ./boost/python/detail/destroy.hpp:33: warning: dereferencing pointer ‘p.381’ does break strict-aliasing rules
@@ -650,21 +620,20 @@ gcc.compile.c++ bin.v2/libs/python/build/gcc-4.4.5/release/address-model-64/link
 ./boost/python/detail/destroy.hpp:90: note: initialized from here
 ./boost/python/detail/destroy.hpp:33: warning: dereferencing pointer ‘p.381’ does break strict-aliasing rules
 ./boost/python/detail/destroy.hpp:90: note: initialized from here
-gcc.compile.c++ bin.v2/libs/python/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/long.o
-gcc.compile.c++ bin.v2/libs/python/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/tuple.o
-common.mkdir bin.v2/libs/python/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/converter
 gcc.compile.c++ bin.v2/libs/python/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/dict.o
 ./boost/python/detail/destroy.hpp: In member function ‘bool boost::python::detail::dict_base::has_key(const boost::python::api::object&) const’:
 ./boost/python/detail/destroy.hpp:33: warning: dereferencing pointer ‘p.280’ does break strict-aliasing rules
 ./boost/python/detail/destroy.hpp:90: note: initialized from here
 ./boost/python/detail/destroy.hpp:33: warning: dereferencing pointer ‘p.280’ does break strict-aliasing rules
 ./boost/python/detail/destroy.hpp:90: note: initialized from here
+common.mkdir bin.v2/libs/python/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/converter
+gcc.compile.c++ bin.v2/libs/python/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/tuple.o
 gcc.compile.c++ bin.v2/libs/python/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/slice.o
 gcc.compile.c++ bin.v2/libs/python/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/converter/from_python.o
 common.mkdir bin.v2/libs/python/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/object
 gcc.compile.c++ bin.v2/libs/python/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/converter/type_id.o
-gcc.compile.c++ bin.v2/libs/python/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/converter/registry.o
 gcc.compile.c++ bin.v2/libs/python/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/str.o
+gcc.compile.c++ bin.v2/libs/python/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/converter/registry.o
 gcc.compile.c++ bin.v2/libs/python/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/object/enum.o
 libs/python/src/object/enum.cpp: In function ‘boost::python::api::object boost::python::objects::<unnamed>::new_enum_type(const char*, const char*)’:
 libs/python/src/object/enum.cpp:150: warning: dereferencing type-punned pointer will break strict-aliasing rules
@@ -749,12 +718,12 @@ libs/python/src/object/function.cpp:110: warning: dereferencing pointer ‘funct
 libs/python/src/object/function.cpp:110: note: initialized from here
 gcc.compile.c++ bin.v2/libs/python/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/errors.o
 gcc.compile.c++ bin.v2/libs/python/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/object/inheritance.o
-gcc.compile.c++ bin.v2/libs/python/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/converter/builtin_converters.o
 gcc.compile.c++ bin.v2/libs/python/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/object/pickle_support.o
+gcc.compile.c++ bin.v2/libs/python/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/converter/builtin_converters.o
 gcc.compile.c++ bin.v2/libs/python/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/converter/arg_to_python_base.o
 gcc.compile.c++ bin.v2/libs/python/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/module.o
-gcc.compile.c++ bin.v2/libs/python/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/object/iterator.o
 gcc.compile.c++ bin.v2/libs/python/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/object/stl_iterator.o
+gcc.compile.c++ bin.v2/libs/python/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/object/iterator.o
 gcc.compile.c++ bin.v2/libs/python/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/object_protocol.o
 gcc.compile.c++ bin.v2/libs/python/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/object_operators.o
 gcc.compile.c++ bin.v2/libs/python/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/wrapper.o
@@ -778,8 +747,8 @@ gcc.compile.c++ bin.v2/libs/serialization/build/gcc-4.4.5/release/address-model-
 gcc.compile.c++ bin.v2/libs/random/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/random_device.o
 gcc.archive bin.v2/libs/random/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/libboost_random.a
 common.copy stage/lib/libboost_random.a
-gcc.compile.c++ bin.v2/libs/serialization/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/basic_iserializer.o
 gcc.compile.c++ bin.v2/libs/python/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/exec.o
+gcc.compile.c++ bin.v2/libs/serialization/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/basic_iserializer.o
 gcc.compile.c++ bin.v2/libs/serialization/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/basic_oserializer.o
 gcc.compile.c++ bin.v2/libs/serialization/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/basic_pointer_iserializer.o
 gcc.compile.c++ bin.v2/libs/serialization/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/basic_pointer_oserializer.o
@@ -819,8 +788,8 @@ gcc.compile.c++ bin.v2/libs/serialization/build/gcc-4.4.5/release/address-model-
 gcc.compile.c++ bin.v2/libs/serialization/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/polymorphic_iarchive.o
 gcc.compile.c++ bin.v2/libs/serialization/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/polymorphic_oarchive.o
 gcc.compile.c++ bin.v2/libs/serialization/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/binary_iarchive.o
-gcc.compile.c++ bin.v2/libs/serialization/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/archive_exception.o
 gcc.compile.c++ bin.v2/libs/serialization/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/void_cast.o
+gcc.compile.c++ bin.v2/libs/serialization/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/archive_exception.o
 gcc.compile.c++ bin.v2/libs/serialization/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/text_oarchive.o
 gcc.compile.c++ bin.v2/libs/serialization/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/text_iarchive.o
 gcc.compile.c++ bin.v2/libs/serialization/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/xml_archive_exception.o
@@ -849,8 +818,8 @@ libs/serialization/src/basic_text_woprimitive.cpp:30:   instantiated from here
 ./boost/archive/iterators/transform_width.hpp:101: warning:   ‘char boost::archive::iterators::transform_width<const char*, 6, 8, char>::m_buffer_in’
 ./boost/archive/iterators/transform_width.hpp:119: warning:   when initialized here
 gcc.compile.c++ bin.v2/libs/serialization/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/utf8_codecvt_facet.o
-gcc.compile.c++ bin.v2/libs/serialization/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/text_woarchive.o
 gcc.compile.c++ bin.v2/libs/serialization/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/text_wiarchive.o
+gcc.compile.c++ bin.v2/libs/serialization/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/text_woarchive.o
 gcc.compile.c++ bin.v2/libs/serialization/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/xml_woarchive.o
 gcc.compile.c++ bin.v2/libs/serialization/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/codecvt_null.o
 common.mkdir bin.v2/libs/signals
@@ -866,7 +835,7 @@ gcc.archive bin.v2/libs/serialization/build/gcc-4.4.5/release/address-model-64/l
 common.copy stage/lib/libboost_serialization.a
 gcc.compile.c++ bin.v2/libs/signals/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/trackable.o
 gcc.compile.c++ bin.v2/libs/signals/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/connection.o
-gcc.compile.c++ bin.v2/libs/signals/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/slot.o
+gcc.compile.c++ bin.v2/libs/signals/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/signal_base.o
 common.mkdir bin.v2/libs/test
 common.mkdir bin.v2/libs/test/build
 common.mkdir bin.v2/libs/test/build/gcc-4.4.5
@@ -874,12 +843,15 @@ common.mkdir bin.v2/libs/test/build/gcc-4.4.5/release
 common.mkdir bin.v2/libs/test/build/gcc-4.4.5/release/address-model-64
 common.mkdir bin.v2/libs/test/build/gcc-4.4.5/release/address-model-64/link-static
 common.mkdir bin.v2/libs/test/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi
-gcc.compile.c++ bin.v2/libs/signals/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/signal_base.o
+gcc.compile.c++ bin.v2/libs/signals/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/slot.o
 gcc.compile.c++ bin.v2/libs/signals/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/named_slot_map.o
 gcc.archive bin.v2/libs/signals/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/libboost_signals.a
 common.copy stage/lib/libboost_signals.a
 gcc.compile.c++ bin.v2/libs/test/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/cpp_main.o
 gcc.compile.c++ bin.v2/libs/test/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/execution_monitor.o
+gcc.compile.c++ bin.v2/libs/serialization/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/xml_wgrammar.o
+gcc.archive bin.v2/libs/serialization/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/libboost_wserialization.a
+common.copy stage/lib/libboost_wserialization.a
 gcc.compile.c++ bin.v2/libs/test/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/debug.o
 In file included from libs/test/src/debug.cpp:16:
 /usr/include/c++/4.4/bits/stl_algo.h: In function ‘void boost::debug::<unnamed>::start_gdb_in_emacs(const boost::debug::dbg_startup_info&)’:
@@ -892,16 +864,13 @@ In file included from libs/test/src/debug.cpp:16:
 In file included from libs/test/src/debug.cpp:16:
 /usr/include/c++/4.4/bits/stl_algo.h: In function ‘void boost::debug::<unnamed>::start_dbx_in_xterm(const boost::debug::dbg_startup_info&)’:
 /usr/include/c++/4.4/bits/stl_algo.h:186: warning: array subscript is above array bounds
-gcc.compile.c++ bin.v2/libs/serialization/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/xml_wgrammar.o
 gcc.archive bin.v2/libs/test/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/libboost_prg_exec_monitor.a
 common.copy stage/lib/libboost_prg_exec_monitor.a
-gcc.archive bin.v2/libs/serialization/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/libboost_wserialization.a
-common.copy stage/lib/libboost_wserialization.a
 gcc.compile.c++ bin.v2/libs/test/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/compiler_log_formatter.o
 gcc.compile.c++ bin.v2/libs/test/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/plain_report_formatter.o
 gcc.compile.c++ bin.v2/libs/test/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/progress_monitor.o
-gcc.compile.c++ bin.v2/libs/test/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/results_collector.o
 gcc.compile.c++ bin.v2/libs/test/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/results_reporter.o
+gcc.compile.c++ bin.v2/libs/test/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/results_collector.o
 gcc.compile.c++ bin.v2/libs/test/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/test_main.o
 gcc.compile.c++ bin.v2/libs/test/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/framework.o
 gcc.compile.c++ bin.v2/libs/test/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/unit_test_log.o
@@ -931,8 +900,8 @@ common.mkdir bin.v2/libs/timer/build/gcc-4.4.5/release
 common.mkdir bin.v2/libs/timer/build/gcc-4.4.5/release/address-model-64
 common.mkdir bin.v2/libs/timer/build/gcc-4.4.5/release/address-model-64/link-static
 common.mkdir bin.v2/libs/timer/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi
-gcc.compile.c++ bin.v2/libs/test/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/logged_expectations.o
 gcc.compile.c++ bin.v2/libs/timer/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/auto_timers_construction.o
+gcc.compile.c++ bin.v2/libs/test/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/logged_expectations.o
 common.mkdir bin.v2/libs/wave
 common.mkdir bin.v2/libs/wave/build
 common.mkdir bin.v2/libs/wave/build/gcc-4.4.5
@@ -1478,9 +1447,9 @@ In file included from libs/wave/src/instantiate_re2c_lexer_str.cpp:29:
 ./boost/wave/util/flex_string.hpp:1212: note: initialized from here
 common.mkdir bin.v2/libs/wave/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/cpplexer
 common.mkdir bin.v2/libs/wave/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/cpplexer/re2clex
-gcc.compile.c++ bin.v2/libs/wave/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/wave_config_constant.o
-gcc.compile.c++ bin.v2/libs/wave/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/token_ids.o
 gcc.compile.c++ bin.v2/libs/wave/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/instantiate_predef_macros.o
+gcc.compile.c++ bin.v2/libs/wave/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/token_ids.o
+gcc.compile.c++ bin.v2/libs/wave/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/wave_config_constant.o
 gcc.compile.c++ bin.v2/libs/wave/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/cpplexer/re2clex/aq.o
 gcc.compile.c++ bin.v2/libs/wave/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/cpplexer/re2clex/cpp_re.o
 gcc.archive bin.v2/libs/wave/build/gcc-4.4.5/release/address-model-64/link-static/threading-multi/libboost_wave.a
@@ -1742,15 +1711,391 @@ Scanning dependencies of target Pantheios
 -- extracting... [rename]
 -- extracting... [clean up]
 -- extracting... done
-[ 47%] Performing patch step for 'Pantheios'
-(Stripping trailing CRs from patch.)
-patching file test/unit/test.unit.util.onbailout/test.unit.util.onbailout.cpp
-Hunk #1 FAILED at 178.
-1 out of 1 hunk FAILED -- saving rejects to file test/unit/test.unit.util.onbailout/test.unit.util.onbailout.cpp.rej
-(Stripping trailing CRs from patch.)
-patching file include/pantheios/implicit_link/implicit_link_base_.h
-Hunk #1 FAILED at 205.
-1 out of 1 hunk FAILED -- saving rejects to file include/pantheios/implicit_link/implicit_link_base_.h.rej
-make[2]: *** [../CMake_trash/src/Pantheios-stamp/Pantheios-patch] Error 1
-make[1]: *** [Third_Party/CMakeFiles/Pantheios.dir/all] Error 2
+[ 47%] No patch step for 'Pantheios'
+[ 47%] No update step for 'Pantheios'
+[ 47%] No configure step for 'Pantheios'
+[ 47%] Performing build step for 'Pantheios'
+Ensuring all STLSoft C source files are in UNIX format
+Ensuring all Pantheios - and bundled library - C source files are in UNIX format
+[ 47%] No install step for 'Pantheios'
+[ 47%] Completed 'Pantheios'
+[ 70%] Built target Pantheios
+Scanning dependencies of target googletest
+[ 70%] Creating directories for 'googletest'
+[ 70%] Performing download step (SVN checkout) for 'googletest'
+A    googletest/test
+A    googletest/test/gtest_break_on_failure_unittest_.cc
+A    googletest/test/gtest-param-test_test.cc
+A    googletest/test/gtest_list_tests_unittest_.cc
+A    googletest/test/gtest-test-part_test.cc
+A    googletest/test/gtest-typed-test2_test.cc
+A    googletest/test/gtest-message_test.cc
+A    googletest/test/gtest-port_test.cc
+A    googletest/test/gtest-listener_test.cc
+A    googletest/test/gtest_prod_test.cc
+A    googletest/test/gtest_environment_test.cc
+A    googletest/test/gtest-tuple_test.cc
+A    googletest/test/gtest_uninitialized_test_.cc
+A    googletest/test/gtest_xml_outfile2_test_.cc
+A    googletest/test/gtest-filepath_test.cc
+A    googletest/test/gtest_uninitialized_test.py
+A    googletest/test/gtest_pred_impl_unittest.cc
+A    googletest/test/gtest_color_test_.cc
+A    googletest/test/gtest_xml_output_unittest_.cc
+A    googletest/test/gtest_repeat_test.cc
+A    googletest/test/gtest_color_test.py
+A    googletest/test/production.cc
+A    googletest/test/gtest_xml_output_unittest.py
+A    googletest/test/gtest_stress_test.cc
+A    googletest/test/gtest_xml_test_utils.py
+A    googletest/test/gtest_output_test_golden_lin.txt
+A    googletest/test/gtest_main_unittest.cc
+A    googletest/test/gtest-printers_test.cc
+A    googletest/test/gtest_catch_exceptions_test.py
+A    googletest/test/gtest_help_test_.cc
+A    googletest/test/gtest_filter_unittest.py
+A    googletest/test/gtest_break_on_failure_unittest.py
+A    googletest/test/gtest_help_test.py
+A    googletest/test/gtest_shuffle_test_.cc
+A    googletest/test/gtest-param-test_test.h
+A    googletest/test/gtest_output_test_.cc
+A    googletest/test/gtest_env_var_test_.cc
+A    googletest/test/gtest_shuffle_test.py
+A    googletest/test/gtest_list_tests_unittest.py
+A    googletest/test/gtest_throw_on_failure_ex_test.cc
+A    googletest/test/gtest_env_var_test.py
+A    googletest/test/gtest_output_test.py
+A    googletest/test/gtest_test_utils.py
+A    googletest/test/gtest-unittest-api_test.cc
+A    googletest/test/gtest_throw_on_failure_test_.cc
+A    googletest/test/gtest_xml_outfile1_test_.cc
+A    googletest/test/gtest_all_test.cc
+A    googletest/test/gtest_throw_on_failure_test.py
+A    googletest/test/gtest-linked_ptr_test.cc
+A    googletest/test/gtest-options_test.cc
+A    googletest/test/gtest_sole_header_test.cc
+A    googletest/test/gtest_no_test_unittest.cc
+A    googletest/test/gtest-death-test_ex_test.cc
+A    googletest/test/gtest_xml_outfiles_test.py
+A    googletest/test/gtest-param-test2_test.cc
+A    googletest/test/gtest-death-test_test.cc
+A    googletest/test/gtest-typed-test_test.cc
+A    googletest/test/gtest_unittest.cc
+A    googletest/test/gtest-typed-test_test.h
+A    googletest/test/gtest_catch_exceptions_test_.cc
+A    googletest/test/production.h
+A    googletest/test/gtest_filter_unittest_.cc
+A    googletest/m4
+A    googletest/m4/acx_pthread.m4
+A    googletest/m4/gtest.m4
+A    googletest/cmake
+A    googletest/cmake/internal_utils.cmake
+A    googletest/LICENSE
+A    googletest/include
+A    googletest/include/gtest
+A    googletest/include/gtest/gtest_prod.h
+A    googletest/include/gtest/gtest-printers.h
+A    googletest/include/gtest/gtest-spi.h
+A    googletest/include/gtest/gtest-param-test.h
+A    googletest/include/gtest/gtest-param-test.h.pump
+A    googletest/include/gtest/gtest_pred_impl.h
+A    googletest/include/gtest/gtest.h
+A    googletest/include/gtest/gtest-death-test.h
+A    googletest/include/gtest/gtest-typed-test.h
+A    googletest/include/gtest/internal
+A    googletest/include/gtest/internal/gtest-string.h
+A    googletest/include/gtest/internal/gtest-param-util-generated.h.pump
+A    googletest/include/gtest/internal/gtest-param-util-generated.h
+A    googletest/include/gtest/internal/gtest-tuple.h.pump
+A    googletest/include/gtest/internal/gtest-tuple.h
+A    googletest/include/gtest/internal/gtest-param-util.h
+A    googletest/include/gtest/internal/gtest-linked_ptr.h
+A    googletest/include/gtest/internal/gtest-internal.h
+A    googletest/include/gtest/internal/gtest-death-test-internal.h
+A    googletest/include/gtest/internal/gtest-type-util.h
+A    googletest/include/gtest/internal/gtest-filepath.h
+A    googletest/include/gtest/internal/gtest-type-util.h.pump
+A    googletest/include/gtest/internal/gtest-port.h
+A    googletest/include/gtest/gtest-test-part.h
+A    googletest/include/gtest/gtest-message.h
+A    googletest/scripts
+A    googletest/scripts/test
+A    googletest/scripts/test/Makefile
+A    googletest/scripts/upload_gtest.py
+A    googletest/scripts/gen_gtest_pred_impl.py
+A    googletest/scripts/fuse_gtest_files.py
+A    googletest/scripts/pump.py
+A    googletest/scripts/upload.py
+A    googletest/scripts/gtest-config.in
+A    googletest/src
+A    googletest/src/gtest-all.cc
+A    googletest/src/gtest-filepath.cc
+A    googletest/src/gtest-internal-inl.h
+A    googletest/src/gtest-death-test.cc
+A    googletest/src/gtest-typed-test.cc
+A    googletest/src/gtest.cc
+A    googletest/src/gtest-test-part.cc
+A    googletest/src/gtest-port.cc
+A    googletest/src/gtest_main.cc
+A    googletest/src/gtest-printers.cc
+A    googletest/build-aux
+A    googletest/build-aux/.keep
+A    googletest/README
+A    googletest/CONTRIBUTORS
+A    googletest/xcode
+A    googletest/xcode/gtest.xcodeproj
+A    googletest/xcode/gtest.xcodeproj/project.pbxproj
+A    googletest/xcode/Samples
+A    googletest/xcode/Samples/FrameworkSample
+A    googletest/xcode/Samples/FrameworkSample/runtests.sh
+A    googletest/xcode/Samples/FrameworkSample/Info.plist
+A    googletest/xcode/Samples/FrameworkSample/widget_test.cc
+A    googletest/xcode/Samples/FrameworkSample/widget.cc
+A    googletest/xcode/Samples/FrameworkSample/widget.h
+A    googletest/xcode/Samples/FrameworkSample/WidgetFramework.xcodeproj
+A    googletest/xcode/Samples/FrameworkSample/WidgetFramework.xcodeproj/project.pbxproj
+A    googletest/xcode/Config
+A    googletest/xcode/Config/StaticLibraryTarget.xcconfig
+A    googletest/xcode/Config/FrameworkTarget.xcconfig
+A    googletest/xcode/Config/TestTarget.xcconfig
+A    googletest/xcode/Config/ReleaseProject.xcconfig
+A    googletest/xcode/Config/General.xcconfig
+A    googletest/xcode/Config/DebugProject.xcconfig
+A    googletest/xcode/Scripts
+A    googletest/xcode/Scripts/runtests.sh
+A    googletest/xcode/Scripts/versiongenerate.py
+A    googletest/xcode/Resources
+A    googletest/xcode/Resources/Info.plist
+A    googletest/configure.ac
+A    googletest/samples
+A    googletest/samples/sample1_unittest.cc
+A    googletest/samples/sample2_unittest.cc
+A    googletest/samples/sample1.cc
+A    googletest/samples/sample3_unittest.cc
+A    googletest/samples/sample2.cc
+A    googletest/samples/sample4_unittest.cc
+A    googletest/samples/sample1.h
+A    googletest/samples/sample2.h
+A    googletest/samples/sample5_unittest.cc
+A    googletest/samples/sample4.cc
+A    googletest/samples/sample6_unittest.cc
+A    googletest/samples/sample4.h
+A    googletest/samples/sample7_unittest.cc
+A    googletest/samples/prime_tables.h
+A    googletest/samples/sample8_unittest.cc
+A    googletest/samples/sample9_unittest.cc
+A    googletest/samples/sample10_unittest.cc
+A    googletest/samples/sample3-inl.h
+A    googletest/CHANGES
+A    googletest/msvc
+A    googletest/msvc/gtest-md.sln
+A    googletest/msvc/gtest.sln
+A    googletest/msvc/gtest_unittest-md.vcproj
+A    googletest/msvc/gtest-md.vcproj
+A    googletest/msvc/gtest_unittest.vcproj
+A    googletest/msvc/gtest.vcproj
+A    googletest/msvc/gtest_prod_test-md.vcproj
+A    googletest/msvc/gtest_main-md.vcproj
+A    googletest/msvc/gtest_prod_test.vcproj
+A    googletest/msvc/gtest_main.vcproj
+A    googletest/Makefile.am
+A    googletest/codegear
+A    googletest/codegear/gtest_all.cc
+A    googletest/codegear/gtest_unittest.cbproj
+A    googletest/codegear/gtest.cbproj
+A    googletest/codegear/gtest_link.cc
+A    googletest/codegear/gtest_main.cbproj
+A    googletest/codegear/gtest.groupproj
+A    googletest/CMakeLists.txt
+A    googletest/make
+A    googletest/make/Makefile
+Checked out revision 646.
+[ 70%] No patch step for 'googletest'
+[ 70%] Performing update step (SVN update) for 'googletest'
+At revision 646.
+[ 70%] Performing configure step for 'googletest'
+-- The CXX compiler identification is GNU
+-- The C compiler identification is GNU
+-- Check for working CXX compiler: /usr/bin/c++
+-- Check for working CXX compiler: /usr/bin/c++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working C compiler: /usr/bin/gcc
+-- Check for working C compiler: /usr/bin/gcc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Found PythonInterp: /usr/bin/python2.6
+-- Looking for include files CMAKE_HAVE_PTHREAD_H
+-- Looking for include files CMAKE_HAVE_PTHREAD_H - found
+-- Looking for pthread_create in pthreads
+-- Looking for pthread_create in pthreads - not found
+-- Looking for pthread_create in pthread
+-- Looking for pthread_create in pthread - found
+-- Found Threads: TRUE
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/baniuk/LOG_test/bin/Third_Party/GTest/src/googletest-build
+[ 70%] Performing build step for 'googletest'
+Scanning dependencies of target gtest
+[ 50%] Building CXX object CMakeFiles/gtest.dir/src/gtest-all.cc.o
+Linking CXX static library libgtest.a
+[ 50%] Built target gtest
+Scanning dependencies of target gtest_main
+[100%] Building CXX object CMakeFiles/gtest_main.dir/src/gtest_main.cc.o
+Linking CXX static library libgtest_main.a
+[100%] Built target gtest_main
+[ 70%] No install step for 'googletest'
+[ 70%] Completed 'googletest'
+[ 94%] Built target googletest
+Scanning dependencies of target doc
+[ 94%] Generating API documentation with Doxygen
+warning: ignoring unsupported tag `PROJECT_BRIEF          =' at line 41, file /home/baniuk/LOG_test/Configs/Doxyfile.cmake
+warning: ignoring unsupported tag `PROJECT_LOGO           =' at line 48, file /home/baniuk/LOG_test/Configs/Doxyfile.cmake
+warning: ignoring unsupported tag `TCL_SUBST              =' at line 215, file /home/baniuk/LOG_test/Configs/Doxyfile.cmake
+warning: ignoring unsupported tag `MARKDOWN_SUPPORT       =' at line 263, file /home/baniuk/LOG_test/Configs/Doxyfile.cmake
+warning: ignoring unsupported tag `AUTOLINK_SUPPORT       =' at line 270, file /home/baniuk/LOG_test/Configs/Doxyfile.cmake
+warning: ignoring unsupported tag `INLINE_GROUPED_CLASSES =' at line 321, file /home/baniuk/LOG_test/Configs/Doxyfile.cmake
+warning: ignoring unsupported tag `INLINE_SIMPLE_STRUCTS  =' at line 330, file /home/baniuk/LOG_test/Configs/Doxyfile.cmake
+warning: ignoring unsupported tag `LOOKUP_CACHE_SIZE      =' at line 367, file /home/baniuk/LOG_test/Configs/Doxyfile.cmake
+warning: ignoring unsupported tag `EXTRACT_PACKAGE        =' at line 388, file /home/baniuk/LOG_test/Configs/Doxyfile.cmake
+warning: ignoring unsupported tag `STRICT_PROTO_MATCHING  =' at line 530, file /home/baniuk/LOG_test/Configs/Doxyfile.cmake
+warning: ignoring unsupported tag `CITE_BIB_FILES         =' at line 618, file /home/baniuk/LOG_test/Configs/Doxyfile.cmake
+warning: ignoring unsupported tag `FILTER_SOURCE_PATTERNS =' at line 828, file /home/baniuk/LOG_test/Configs/Doxyfile.cmake
+warning: ignoring unsupported tag `USE_MDFILE_AS_MAINPAGE =' at line 835, file /home/baniuk/LOG_test/Configs/Doxyfile.cmake
+warning: ignoring unsupported tag `HTML_EXTRA_STYLESHEET  =' at line 972, file /home/baniuk/LOG_test/Configs/Doxyfile.cmake
+warning: ignoring unsupported tag `HTML_EXTRA_FILES       =' at line 981, file /home/baniuk/LOG_test/Configs/Doxyfile.cmake
+warning: ignoring unsupported tag `HTML_INDEX_NUM_ENTRIES =' at line 1029, file /home/baniuk/LOG_test/Configs/Doxyfile.cmake
+warning: ignoring unsupported tag `USE_MATHJAX            =' at line 1243, file /home/baniuk/LOG_test/Configs/Doxyfile.cmake
+warning: ignoring unsupported tag `MATHJAX_FORMAT         =' at line 1250, file /home/baniuk/LOG_test/Configs/Doxyfile.cmake
+warning: ignoring unsupported tag `MATHJAX_RELPATH        =' at line 1261, file /home/baniuk/LOG_test/Configs/Doxyfile.cmake
+warning: ignoring unsupported tag `MATHJAX_EXTENSIONS     =' at line 1266, file /home/baniuk/LOG_test/Configs/Doxyfile.cmake
+warning: ignoring unsupported tag `EXTERNAL_SEARCH        =' at line 1296, file /home/baniuk/LOG_test/Configs/Doxyfile.cmake
+warning: ignoring unsupported tag `SEARCHENGINE_URL       =' at line 1304, file /home/baniuk/LOG_test/Configs/Doxyfile.cmake
+warning: ignoring unsupported tag `SEARCHDATA_FILE        =' at line 1310, file /home/baniuk/LOG_test/Configs/Doxyfile.cmake
+warning: ignoring unsupported tag `EXTERNAL_SEARCH_ID     =' at line 1317, file /home/baniuk/LOG_test/Configs/Doxyfile.cmake
+warning: ignoring unsupported tag `EXTRA_SEARCH_MAPPINGS  =' at line 1326, file /home/baniuk/LOG_test/Configs/Doxyfile.cmake
+warning: ignoring unsupported tag `LATEX_FOOTER           =' at line 1386, file /home/baniuk/LOG_test/Configs/Doxyfile.cmake
+warning: ignoring unsupported tag `LATEX_BIB_STYLE        =' at line 1425, file /home/baniuk/LOG_test/Configs/Doxyfile.cmake
+warning: ignoring unsupported tag `UML_LIMIT_NUM_FIELDS   =' at line 1776, file /home/baniuk/LOG_test/Configs/Doxyfile.cmake
+warning: ignoring unsupported tag `INTERACTIVE_SVG        =' at line 1840, file /home/baniuk/LOG_test/Configs/Doxyfile.cmake
+warning: ignoring unsupported tag `MSCFILE_DIRS           =' at line 1857, file /home/baniuk/LOG_test/Configs/Doxyfile.cmake
+warning: tag INPUT: input source `..\src' does not exist
+warning: tag INPUT: input source `..\includes' does not exist
+warning: tag INPUT: input source `..\tests' does not exist
+Warning: The selected output language "polish" has not been updated
+since release 1.6.3.  As a result some sentences may appear in English.
+
+warning: source ..\src is not a readable file or directory... skipping.
+warning: source ..\includes is not a readable file or directory... skipping.
+warning: source ..\tests is not a readable file or directory... skipping.
+Searching for include files...
+Searching for example files...
+Searching for images...
+Searching for dot files...
+Searching for files to exclude
+Searching for files to process...
+Reading and parsing tag files
+Building group list...
+Building directory list...
+Building namespace list...
+Building file list...
+Building class list...
+Associating documentation with classes...
+Computing nesting relations for classes...
+Building example list...
+Searching for enumerations...
+Searching for documented typedefs...
+Searching for members imported via using declarations...
+Searching for included using directives...
+Searching for documented variables...
+Building member list...
+Searching for friends...
+Searching for documented defines...
+Computing class inheritance relations...
+Computing class usage relations...
+Flushing cached template relations that have become invalid...
+Creating members for template instances...
+Computing class relations...
+Add enum values to enums...
+Searching for member function documentation...
+Building page list...
+Search for main page...
+Computing page relations...
+Determining the scope of groups...
+Sorting lists...
+Freeing entry tree
+Determining which enums are documented
+Computing member relations...
+Building full member lists recursively...
+Adding members to member groups.
+Computing member references...
+Inheriting documentation...
+Generating disk names...
+Adding source references...
+Adding xrefitems...
+Sorting member lists...
+Counting data structures...
+Resolving user defined references...
+Finding anchors and sections in the documentation...
+Combining using relations...
+Adding members to index pages...
+Generating style sheet...
+Generating index page...
+Generating page index...
+Generating example documentation...
+Generating file sources...
+Generating file documentation...
+Generating page documentation...
+Generating group documentation...
+Generating group index...
+Generating class documentation...
+Generating annotated compound index...
+Generating alphabetical compound index...
+Generating hierarchical class index...
+Generating member index...
+Generating namespace index...
+Generating namespace member index...
+Generating graph info page...
+Generating file index...
+Generating example index...
+Generating file member index...
+finalizing index lists...
+finished...
+[ 97%] Built target doc
+Scanning dependencies of target test_log
+[100%] Building CXX object src/CMakeFiles/test_log.dir/LOG_test.cpp.o
+Linking CXX executable test_log
+CMakeFiles/test_log.dir/LOG_test.cpp.o: In function `main':
+LOG_test.cpp:(.text+0x19): undefined reference to `pantheios_be_file_setFilePath'
+CMakeFiles/test_log.dir/LOG_test.cpp.o:(.data+0x28): undefined reference to `pantheios_be_file_init'
+CMakeFiles/test_log.dir/LOG_test.cpp.o:(.data+0x30): undefined reference to `pantheios_be_file_uninit'
+CMakeFiles/test_log.dir/LOG_test.cpp.o:(.data+0x38): undefined reference to `pantheios_be_file_logEntry'
+CMakeFiles/test_log.dir/LOG_test.cpp.o:(.data+0x58): undefined reference to `pantheios_be_fprintf_init'
+CMakeFiles/test_log.dir/LOG_test.cpp.o:(.data+0x60): undefined reference to `pantheios_be_fprintf_uninit'
+CMakeFiles/test_log.dir/LOG_test.cpp.o:(.data+0x68): undefined reference to `pantheios_be_fprintf_logEntry'
+CMakeFiles/test_log.dir/LOG_test.cpp.o: In function `pantheios::util::strnlen(char const*, unsigned long)':
+LOG_test.cpp:(.text._ZN9pantheios4util7strnlenEPKcm[pantheios::util::strnlen(char const*, unsigned long)]+0x1f): undefined reference to `pantheios_util_strnlen'
+CMakeFiles/test_log.dir/LOG_test.cpp.o: In function `pantheios::internal::log_dispatch_1(int, unsigned long, char const*)':
+LOG_test.cpp:(.text._ZN9pantheios8internal14log_dispatch_1EimPKc[pantheios::internal::log_dispatch_1(int, unsigned long, char const*)]+0x37): undefined reference to `pantheios_log_1_no_test'
+CMakeFiles/test_log.dir/LOG_test.cpp.o: In function `pantheios_initialiser::pantheios_initialiser()':
+LOG_test.cpp:(.text._ZN21pantheios_initialiserC1Ev[pantheios_initialiser::pantheios_initialiser()]+0xd): undefined reference to `pantheios_init'
+LOG_test.cpp:(.text._ZN21pantheios_initialiserC1Ev[pantheios_initialiser::pantheios_initialiser()]+0x1e): undefined reference to `pantheios_exitProcess'
+CMakeFiles/test_log.dir/LOG_test.cpp.o: In function `pantheios_initialiser::~pantheios_initialiser()':
+LOG_test.cpp:(.text._ZN21pantheios_initialiserD1Ev[pantheios_initialiser::~pantheios_initialiser()]+0xd): undefined reference to `pantheios_uninit'
+CMakeFiles/test_log.dir/LOG_test.cpp.o: In function `pantheios_be_file_setFilePath(char const*, int)':
+LOG_test.cpp:(.text._Z29pantheios_be_file_setFilePathPKci[pantheios_be_file_setFilePath(char const*, int)]+0x26): undefined reference to `pantheios_be_file_setFilePath'
+CMakeFiles/test_log.dir/LOG_test.cpp.o: In function `int pantheios::log<char [16]>(int, char const (&) [16])':
+LOG_test.cpp:(.text._ZN9pantheios3logIA16_cEEiiRKT_[int pantheios::log<char [16]>(int, char const (&) [16])]+0x16): undefined reference to `pantheios_isSeverityLogged'
+CMakeFiles/test_log.dir/LOG_test.cpp.o: In function `int pantheios::log_DEBUG<char [6]>(char const (&) [6])':
+LOG_test.cpp:(.text._ZN9pantheios9log_DEBUGIA6_cEEiRKT_[int pantheios::log_DEBUG<char [6]>(char const (&) [6])]+0x13): undefined reference to `pantheios_isSeverityLogged'
+CMakeFiles/test_log.dir/LOG_test.cpp.o: In function `int pantheios::log_INFORMATIONAL<char [14]>(char const (&) [14])':
+LOG_test.cpp:(.text._ZN9pantheios17log_INFORMATIONALIA14_cEEiRKT_[int pantheios::log_INFORMATIONAL<char [14]>(char const (&) [14])]+0x13): undefined reference to `pantheios_isSeverityLogged'
+CMakeFiles/test_log.dir/LOG_test.cpp.o: In function `int pantheios::log_NOTICE<char [7]>(char const (&) [7])':
+LOG_test.cpp:(.text._ZN9pantheios10log_NOTICEIA7_cEEiRKT_[int pantheios::log_NOTICE<char [7]>(char const (&) [7])]+0x13): undefined reference to `pantheios_isSeverityLogged'
+CMakeFiles/test_log.dir/LOG_test.cpp.o: In function `int pantheios::log_WARNING<char [8]>(char const (&) [8])':
+LOG_test.cpp:(.text._ZN9pantheios11log_WARNINGIA8_cEEiRKT_[int pantheios::log_WARNING<char [8]>(char const (&) [8])]+0x13): undefined reference to `pantheios_isSeverityLogged'
+CMakeFiles/test_log.dir/LOG_test.cpp.o:LOG_test.cpp:(.text._ZN9pantheios9log_ERRORIA6_cEEiRKT_[int pantheios::log_ERROR<char [6]>(char const (&) [6])]+0x13): more undefined references to `pantheios_isSeverityLogged' follow
+collect2: ld returned 1 exit status
+make[2]: *** [src/test_log] Error 1
+make[1]: *** [src/CMakeFiles/test_log.dir/all] Error 2
 make: *** [all] Error 2

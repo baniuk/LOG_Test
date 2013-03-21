@@ -16,12 +16,14 @@ set(BOOST_VER 1.53.0 )
 ########################################################################
 # Patche dla VS12            										   #	
 ######################################################################## 
-MESSAGE(STATUS "Patching sources")
-# nazwy musza byæ nadane tu bo dla takich linków by³y nieprawid³owe
-execute_process(COMMAND ${WGET_EXECUTABLE} -O PANTH.diff http://sourceforge.net/tracker/download.php?group_id=141831&atid=750759&file_id=456644&aid=3587889 WORKING_DIRECTORY ${TMP})
-execute_process(COMMAND ${WGET_EXECUTABLE} -O PANT.zip http://sourceforge.net/tracker/download.php?group_id=141831&atid=750759&file_id=456645&aid=3587889 WORKING_DIRECTORY ${TMP})
+IF (${WIN32})
+    MESSAGE(STATUS "Patching sources")
+    # nazwy musza byæ nadane tu bo dla takich linków by³y nieprawid³owe
+    execute_process(COMMAND ${WGET_EXECUTABLE} -O PANTH.diff http://sourceforge.net/tracker/download.php?group_id=141831&atid=750759&file_id=456644&aid=3587889 WORKING_DIRECTORY ${TMP})
+    execute_process(COMMAND ${WGET_EXECUTABLE} -O PANT.zip http://sourceforge.net/tracker/download.php?group_id=141831&atid=750759&file_id=456645&aid=3587889 WORKING_DIRECTORY ${TMP})
+ENDIF (${WIN32})    
 
-########################################################################
+###############d#########################################################
 # Download STL Pantheios       										   #
 #  																	   #	
 ######################################################################## 	
@@ -45,6 +47,7 @@ ExternalProject_Add(	STLSoft
 # W zalezonosci od wersji ró¿ne makefile w projekcie
 IF (${WIN32})
 	set(SYSTEM_PATH_COMMAND ${PATCH_EXECUTABLE} -p0 -d ${External_tools_SOURCE_DIR}/${PANTHEIOS_VER} -i ${TMP}/PANTH.diff)
+	set(SYSTEM_UPDATE_COMMAND ${ZIP_EXECUTABLE} -u ${TMP}/PANT.zip -d ${External_tools_SOURCE_DIR}/${PANTHEIOS_VER}/build)
 	IF (${MSVC_VERSION} EQUAL 1600)	# MSVC10
 		set(PANTH_MAKEFILE_PATH build/vc10.x64)
 	ELSEIF (${MSVC_VERSION} GREATER 1600)	#MSVC11
@@ -52,7 +55,9 @@ IF (${WIN32})
 	ELSE (${MSVC_VERSION} EQUAL 1600)
 		MESSAGE(FATAL_ERROR "Setup correct makefile for Pantheios for WiN32")
 	ENDIF (${MSVC_VERSION} EQUAL 1600)
-ELSEIF (${UNIX})		
+ELSEIF (${UNIX})
+	set(SYSTEM_PATH_COMMAND "")
+	set(SYSTEM_UPDATE_COMMAND "")
 	IF (${CMAKE_COMPILER_IS_GNUCXX})
 		set(PANTH_MAKEFILE_PATH build/gcc44.unix.file64bit)
 	ELSE (${CMAKE_COMPILER_IS_GNUCXX})
@@ -68,10 +73,10 @@ ExternalProject_Add(	Pantheios
 						PREFIX ${TMP}
 						URL http://sourceforge.net/projects/pantheios/files/Pantheios%20%28C%20and%20Cxx%29/1.0.1%20%28beta%20214%29/pantheios-1.0.1-beta214-src.zip
 						SOURCE_DIR ${External_tools_SOURCE_DIR}/${PANTHEIOS_VER}
-						UPDATE_COMMAND ${ZIP_EXECUTABLE} -u ${TMP}/PANT.zip -d ${External_tools_SOURCE_DIR}/${PANTHEIOS_VER}/build
+						UPDATE_COMMAND ${SYSTEM_UPDATE_COMMAND}
 						PATCH_COMMAND ${SYSTEM_PATH_COMMAND}
 						CONFIGURE_COMMAND ""
-						BUILD_COMMAND cd ${PANTH_MAKEFILE_PATH} && ${CMAKE_BUILD_TOOL}
+						BUILD_COMMAND cd ${PANTH_MAKEFILE_PATH} &&  ${CMAKE_BUILD_TOOL}
 						BUILD_IN_SOURCE 1
 						INSTALL_COMMAND ""						
 					)	
@@ -98,7 +103,7 @@ ExternalProject_Add(	googletest
 						# Disable install step
 						INSTALL_COMMAND ""
 						# Wrap download, configure and build steps in a script to log output
-						LOG_DOWNLOAD ON
+						# LOG_DOWNLOAD ON
 					)
 
 ########################################################################
