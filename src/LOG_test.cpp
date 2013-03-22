@@ -29,8 +29,8 @@
 #include <pantheios/implicit_link/be.N.h>
 // dla windows jest to windowsconsole, dla unixa to fprinf
 //  http://binglongx.wordpress.com/2010/08/30/pantheios-logging-library-installation-and-use/
-#include <pantheios/implicit_link/be.File.h>
-#include <pantheios/implicit_link/be.Console.h>
+#include <pantheios/implicit_link/be.file.h>
+#include <pantheios/implicit_link/be.console.h>
 
 // http://sourceforge.net/projects/pantheios/forums/forum/475314/topic/2186546
 // 

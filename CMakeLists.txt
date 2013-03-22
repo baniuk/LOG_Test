@@ -62,5 +62,14 @@ add_subdirectory(src)
 ########################################################################
 # Create warper makefile with external env                             #
 ########################################################################
-file(WRITE ${TMP}/make_wrapper_script.bat "rem Warper makefile created autmoaticly\n" )
-file(APPEND ${TMP}/make_wrapper_script.bat "set STLSOFT=${External_tools_SOURCE_DIR}/${STL_VER}\n")
+IF (${WIN32})
+	file(WRITE ${TMP}/make_wrapper_script.bat "rem Warper makefile created autmoatically\n" )
+	file(APPEND ${TMP}/make_wrapper_script.bat "set STLSOFT=${External_tools_SOURCE_DIR}/${STL_VER}\n")
+ELSEIF (${UNIX})
+	file(WRITE ${TMP}/make_wrapper_script.sh "# Warper script created automatically\n")
+	file(APPEND ${TMP}/make_wrapper_script.sh "STLSOFT=${External_tools_SOURCE_DIR}/${STL_VER}\n")
+	file(APPEND ${TMP}/make_wrapper_script.sh "export STLSOFT\n")
+	file(APPEND ${TMP}/make_wrapper_script.sh "echo STLSOFT set\n") 
+ELSE (${WIN32})
+	message(FATAL_ERROR "Wrong System")
+ENDIF(${WIN32})	
