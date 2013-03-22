@@ -13,7 +13,7 @@
 #include <pantheios/pantheios.hpp>
 #include <pantheios/backends/be.N.h>
 #include <pantheios/backends/bec.file.h>
-#include <pantheios/backends/bec.console.h>
+#include <pantheios/backends/bec.fprintf.h>
 // simple - chyba tylko w debug, all zawsze ?? http://sourceforge.net/projects/pantheios/forums/forum/475314/topic/2186546
 // N - If you use fe.simple, then all log statements whose severity is less than (=== more severe than, since lower means more severe) the active ceiling will go to all back-ends. 
 // The "active ceiling" defaults to PANTHEIOS_SEV_DEBUG (meaning all statements are emitted) in debug builds, and to PANTHEIOS_SEV_NOTICE (meaning all statements with severity emergency, alert, critical, error, 
@@ -80,7 +80,7 @@ extern "C" const char PANTHEIOS_FE_PROCESS_IDENTITY[] = "LOG_test";
 pan_be_N_t PAN_BE_N_BACKEND_LIST[] =
 {
 	PANTHEIOS_BE_N_STDFORM_ENTRY(File, pantheios_be_file, 0)
-	, PANTHEIOS_BE_N_STDFORM_ENTRY(Console, pantheios_be_console, 0)
+	, PANTHEIOS_BE_N_STDFORM_ENTRY(Console, pantheios_be_fprintf, 0)
 	, PANTHEIOS_BE_N_TERMINATOR_ENTRY
 };
 

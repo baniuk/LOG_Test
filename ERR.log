@@ -5,7 +5,7 @@ MA0002	Dla UNIXa jest permision denied dla warper script (kwestia rozszerzenia o
 Minor
 MI0001	Narzêdzia dla unixa w katalogu external_tools - zglasza problem z find_package dla wget
 MI0002	UNIX:	Przy budowaniu Pantheios nie wyswietla na ekranie nic (mozliwe ze makefile juz to jest ustawione jako -quiet)
-MI0003	UNIX:	Nie linkuje Pantheiosa poprzez implicit_link
+MI0003	SOLVED: UNIX:	Nie linkuje Pantheiosa poprzez implicit_link
 
 Fixes
 F0001	MP dla Pantheiosa dla Windows
