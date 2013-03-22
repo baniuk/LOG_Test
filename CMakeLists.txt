@@ -22,7 +22,8 @@ config_compiler_and_linker()  # Defined in internal_utils.cmake.
 # Setup project                                                        #
 ########################################################################
 include(ExternalProject)
-# Project name - nazwa jako zmienna bo u¿ywana tez w doxygenie
+# Project name - nazwa jako zmienna bo u¿ywana tez w doxygenie, ma wp³yw na inne podprojekty
+# nie zawsze s¹ one zwi¹zane z ta zmienn¹
 set(PROJECT_NAME "Test" CACHE STRING "")
 project (${PROJECT_NAME}) 
 

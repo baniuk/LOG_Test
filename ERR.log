@@ -12,3 +12,4 @@ F0002	UNIX:	MP dla Pantheiosa dla UNIXa
 
 Ideas
 I0001	U¿yc instalacji ¿eby kopiowac liby do okreslonego katalogu, np bin - gotowe biblioteki, build - œmieci podczas kompilacji
+I0002	U¿yc funcji do dodawania exe i lib jak w googletest
