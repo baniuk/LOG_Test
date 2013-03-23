@@ -1,4 +1,4 @@
-#include "C_Point.h"
+#include <C_Point.h>
 
 C_Point::C_Point( double _x, double _y ) :
 	x0(_x),

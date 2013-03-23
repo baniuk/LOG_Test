@@ -32,6 +32,9 @@
 #include <pantheios/implicit_link/be.file.h>
 #include <pantheios/implicit_link/be.fprintf.h>
 
+// Biblioteki inne
+#include "C_Point.h"
+
 // http://sourceforge.net/projects/pantheios/forums/forum/475314/topic/2186546
 // 
 /// Konwersja ci¹gów wymagana przez Pantheios
@@ -84,8 +87,12 @@ pan_be_N_t PAN_BE_N_BACKEND_LIST[] =
 	, PANTHEIOS_BE_N_TERMINATOR_ENTRY
 };
 
+using namespace std;
+
 int main(void)
 {
+	C_Point punkt(100,200);
+
 	pantheios_be_file_setFilePath(PSTR("file-1.log"), PANTHEIOS_BE_FILE_F_TRUNCATE, PANTHEIOS_BE_FILE_F_TRUNCATE, PANTHEIOS_BEID_ALL);
 
 	pantheios::log(pantheios::debug, "Entering main()");
@@ -104,5 +111,6 @@ int main(void)
 	// to ju¿ siê w logu pliku nie pojawi
     pantheios::log_NOTICE(PSTR("stmt 4"));
 
+	cout << "x= " << punkt.getX() << ", y= " << punkt.getY() << endl;
 	return(0);
 }
