@@ -4,7 +4,9 @@ C_Point::C_Point( double _x, double _y ) :
 	x0(_x),
 	y0(_y)
 {
-
+	PANTHEIOS_TRACE_DEBUG("Entering");
+	PANTHEIOS_TRACE_DEBUG("x = ",pantheios::real(x0)," y = ",pantheios::real(y0));
+	PANTHEIOS_TRACE_DEBUG("Leaving");
 }
 
 C_Point::C_Point() :
@@ -27,8 +29,12 @@ void C_Point::CopyToDest( C_Point &dest ) const
 
 void C_Point::setPoint( double _x, double _y )
 {
-	x0 = _x;
+	// http://www.pantheios.org/doc/html/group__group____application__layer__interface____inserters.html
+	PANTHEIOS_TRACE_DEBUG("Entering");
+	x0 = _x;	
 	y0 = _y;
+	PANTHEIOS_TRACE_DEBUG("x = ",pantheios::real(x0)," y = ",pantheios::real(y0));
+	PANTHEIOS_TRACE_DEBUG("Leaving");
 }
 
 void C_Point::getPoint( double &_x, double &_y ) const
@@ -39,7 +45,10 @@ void C_Point::getPoint( double &_x, double &_y ) const
 
 C_Point& C_Point::operator=( const C_Point &rhs )
 {
+	PANTHEIOS_TRACE_DEBUG("Entering");
 	rhs.getPoint(x0,y0);
+	PANTHEIOS_TRACE_DEBUG("Returned pointer ", pantheios::pointer(this,pantheios::fmt::fullHex));
+	PANTHEIOS_TRACE_DEBUG("Leaving");
 	return *this;
 }
 

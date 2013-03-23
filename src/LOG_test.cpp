@@ -11,6 +11,14 @@
 
 // pliki nag³ówkowe do funkcji - nie myliæ z linkowaniem dynamicznym poni¿ej
 #include <pantheios/pantheios.hpp>
+
+// dodaje do logu nazwê funkcji i linii, musi byæ przed trace.h http://stackoverflow.com/questions/2343821/how-to-include-the-calling-class-and-line-number-in-the-log-using-pantheios
+// zmiana wygl¹du logu: http://www.codeproject.com/Articles/27119/Using-Callback-Back-ends-with-the-Pantheios-Loggin
+#ifndef PANTHEIOS_INCL_PANTHEIOS_H_TRACE
+	#define PANTHEIOS_TRACE_PREFIX         __FILE__ "(" PANTHEIOS_STRINGIZE(__LINE__) "): " __FUNCTION__ ": "
+#endif /* PANTHEIOS_INCL_PANTHEIOS_H_TRACE */
+#include <pantheios/trace.h>
+
 #include <pantheios/backends/be.N.h>
 #include <pantheios/backends/bec.file.h>
 #include <pantheios/backends/bec.fprintf.h>
@@ -91,12 +99,14 @@ using namespace std;
 
 int main(void)
 {
-	C_Point punkt(100,200);
-
 	pantheios_be_file_setFilePath(PSTR("file-1.log"), PANTHEIOS_BE_FILE_F_TRUNCATE, PANTHEIOS_BE_FILE_F_TRUNCATE, PANTHEIOS_BEID_ALL);
 
+	C_Point punkt(100,200);
+	C_Point punkt_kopia;
+
 	pantheios::log(pantheios::debug, "Entering main()");
-	pantheios::log_DEBUG("debug");
+	// przyk³ad z do³¹czanie linii i nazwy plików, wymaga trace.h
+	PANTHEIOS_TRACE_DEBUG("debug");
     pantheios::log_INFORMATIONAL("informational");
     pantheios::log_NOTICE("notice");
     pantheios::log_WARNING("warning");
@@ -104,13 +114,17 @@ int main(void)
     pantheios::log_CRITICAL("critical");
     pantheios::log_ALERT("alert");
     pantheios::log_EMERGENCY("EMERGENCY");
+	
+	cout << "x= " << punkt.getX() << ", y= " << punkt.getY() << endl;
+	punkt.setPoint(1,2);
+	punkt_kopia = punkt;
+	cout << "x= " << punkt_kopia.getX() << ", y= " << punkt_kopia.getY() << endl;
+
 
 	// Close all files, by setting the path to NULL.
     pantheios_be_file_setFilePath(NULL, PANTHEIOS_BEID_ALL);
 
 	// to ju¿ siê w logu pliku nie pojawi
     pantheios::log_NOTICE(PSTR("stmt 4"));
-
-	cout << "x= " << punkt.getX() << ", y= " << punkt.getY() << endl;
 	return(0);
 }
