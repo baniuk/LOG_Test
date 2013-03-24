@@ -45,7 +45,7 @@
 
 // http://sourceforge.net/projects/pantheios/forums/forum/475314/topic/2186546
 // 
-/// Konwersja ci¹gów wymagana przez Pantheios
+/// Konwersja ci¹gów wymagana przez Pantheios, w zale¿noœci od ustawieñ kompilatora u¿ywa poprawnych ci¹g³ow
 #ifndef PSTR
 	#define PSTR(x)         PANTHEIOS_LITERAL_STRING(x)
 #endif
@@ -58,7 +58,7 @@ enum LOGI
 }; 
 
 // nazwa aplikacji do logów
-extern "C" const char PANTHEIOS_FE_PROCESS_IDENTITY[] = "LOG_test";
+PANTHEIOS_EXTERN_C const PAN_CHAR_T PANTHEIOS_FE_PROCESS_IDENTITY[] = PSTR("LOG_test");
 
 /**
  * \brief Struktura okreœlaj¹ca minimalny poziom b³edu który trafia do danego logu
@@ -104,16 +104,16 @@ int main(void)
 	C_Point punkt(100,200);
 	C_Point punkt_kopia;
 
-	pantheios::log(pantheios::debug, "Entering main()");
+	pantheios::log(pantheios::debug, PSTR("Entering main()"));
 	// przyk³ad z do³¹czanie linii i nazwy plików, wymaga trace.h
-	PANTHEIOS_TRACE_DEBUG("debug");
-    pantheios::log_INFORMATIONAL("informational");
-    pantheios::log_NOTICE("notice");
-    pantheios::log_WARNING("warning");
-    pantheios::log_ERROR("error");
-    pantheios::log_CRITICAL("critical");
-    pantheios::log_ALERT("alert");
-    pantheios::log_EMERGENCY("EMERGENCY");
+	PANTHEIOS_TRACE_DEBUG(PSTR("debug"));
+    pantheios::log_INFORMATIONAL(PSTR("informational"));
+    pantheios::log_NOTICE(PSTR("notice"));
+    pantheios::log_WARNING(PSTR("warning"));
+    pantheios::log_ERROR(PSTR("error"));
+    pantheios::log_CRITICAL(PSTR("critical"));
+    pantheios::log_ALERT(PSTR("alert"));
+    pantheios::log_EMERGENCY(PSTR("EMERGENCY"));
 	
 	cout << "x= " << punkt.getX() << ", y= " << punkt.getY() << endl;
 	punkt.setPoint(1,2);

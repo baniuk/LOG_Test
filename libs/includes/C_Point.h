@@ -28,7 +28,9 @@
 	#define PANTHEIOS_TRACE_PREFIX         __FILE__ "(" PANTHEIOS_STRINGIZE(__LINE__) "): " __FUNCTION__ ": "
 #endif /* PANTHEIOS_INCL_PANTHEIOS_H_TRACE */
 #include <pantheios/trace.h>
-
+#ifndef PSTR
+	#define PSTR(x)         PANTHEIOS_LITERAL_STRING(x)
+#endif
 /** 
  * Klasa implementuj¹ca punkt w przestreni dwuwymiarowej
  */ 
