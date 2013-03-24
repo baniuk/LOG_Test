@@ -7,6 +7,7 @@ Minor
 MI0001	UNIX:	Narzêdzia dla unixa w katalogu external_tools - zglasza problem z find_package dla wget
 MI0002	UNIX:	Przy budowaniu Pantheios nie wyswietla na ekranie nic (mozliwe ze makefile juz to jest ustawione jako -quiet)
 MI0003	SOLVED: UNIX:	Nie linkuje Pantheiosa poprzez implicit_link
+MI0004	UNIX:	Chyba nie ma syportu do makr __FUNCTION__ w logowaniu. Brak nazwy funkcji w logu?
 
 Fixes
 F0001	WIN:	MP dla Pantheiosa dla Windows
