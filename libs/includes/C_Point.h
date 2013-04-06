@@ -24,13 +24,19 @@
 // insertes - do konwersji liczb itp
 #include <pantheios/inserters/real.hpp>
 #include <pantheios/inserters/pointer.hpp>
-#ifndef PANTHEIOS_INCL_PANTHEIOS_H_TRACE
-	#define PANTHEIOS_TRACE_PREFIX         __FILE__ "(" PANTHEIOS_STRINGIZE(__LINE__) "): " __FUNCTION__ ": "
-#endif /* PANTHEIOS_INCL_PANTHEIOS_H_TRACE */
-#include <pantheios/trace.h>
+// gcc nie rozponaje makra __FUNCTION__, ale ma makro __func_, to sa makra standardowe w ANSI C
 #ifndef PSTR
 	#define PSTR(x)         PANTHEIOS_LITERAL_STRING(x)
 #endif
+// to musi byc wczesniej przed dolaczeniem trace.h
+#ifndef PANTHEIOS_INCL_PANTHEIOS_H_TRACE
+	#ifdef __GNUG__ // dla unixa bez nazw funkcji
+		#define PANTHEIOS_TRACE_PREFIX  PANTHEIOS_FILELINE_A  
+	#else // dla win
+		#define PANTHEIOS_TRACE_PREFIX         __FILE__ "(" PANTHEIOS_STRINGIZE(__LINE__) "): " __FUNCTION__ ": "
+	#endif
+#endif /* PANTHEIOS_INCL_PANTHEIOS_H_TRACE */
+#include <pantheios/trace.h>
 /** 
  * Klasa implementuj¹ca punkt w przestreni dwuwymiarowej
  */ 

@@ -237,10 +237,10 @@ A    googletest/codegear/gtest.groupproj
 A    googletest/CMakeLists.txt
 A    googletest/make
 A    googletest/make/Makefile
-Checked out revision 646.
+Checked out revision 650.
 [ 68%] No patch step for 'googletest'
 [ 68%] Performing update step (SVN update) for 'googletest'
-At revision 646.
+At revision 650.
 [ 68%] Performing configure step for 'googletest'
 -- The CXX compiler identification is GNU
 -- The C compiler identification is GNU
@@ -393,17 +393,17 @@ finished...
 Scanning dependencies of target Package1
 [ 97%] Building CXX object libs/Package1/CMakeFiles/Package1.dir/C_Point.cpp.o
 /home/baniuk/LOG_test/libs/Package1/C_Point.cpp: In constructor ‘C_Point::C_Point(double, double)’:
-/home/baniuk/LOG_test/libs/Package1/C_Point.cpp:7: error: expected ‘)’ before ‘__FUNCTION__’
-/home/baniuk/LOG_test/libs/Package1/C_Point.cpp:8: error: expected ‘)’ before ‘__FUNCTION__’
-/home/baniuk/LOG_test/libs/Package1/C_Point.cpp:9: error: expected ‘)’ before ‘__FUNCTION__’
+/home/baniuk/LOG_test/libs/Package1/C_Point.cpp:7: error: expected ‘)’ before ‘__func__’
+/home/baniuk/LOG_test/libs/Package1/C_Point.cpp:8: error: expected ‘)’ before ‘__func__’
+/home/baniuk/LOG_test/libs/Package1/C_Point.cpp:9: error: expected ‘)’ before ‘__func__’
 /home/baniuk/LOG_test/libs/Package1/C_Point.cpp: In member function ‘void C_Point::setPoint(double, double)’:
-/home/baniuk/LOG_test/libs/Package1/C_Point.cpp:33: error: expected ‘)’ before ‘__FUNCTION__’
-/home/baniuk/LOG_test/libs/Package1/C_Point.cpp:36: error: expected ‘)’ before ‘__FUNCTION__’
-/home/baniuk/LOG_test/libs/Package1/C_Point.cpp:37: error: expected ‘)’ before ‘__FUNCTION__’
+/home/baniuk/LOG_test/libs/Package1/C_Point.cpp:33: error: expected ‘)’ before ‘__func__’
+/home/baniuk/LOG_test/libs/Package1/C_Point.cpp:36: error: expected ‘)’ before ‘__func__’
+/home/baniuk/LOG_test/libs/Package1/C_Point.cpp:37: error: expected ‘)’ before ‘__func__’
 /home/baniuk/LOG_test/libs/Package1/C_Point.cpp: In member function ‘C_Point& C_Point::operator=(const C_Point&)’:
-/home/baniuk/LOG_test/libs/Package1/C_Point.cpp:48: error: expected ‘)’ before ‘__FUNCTION__’
-/home/baniuk/LOG_test/libs/Package1/C_Point.cpp:50: error: expected ‘)’ before ‘__FUNCTION__’
-/home/baniuk/LOG_test/libs/Package1/C_Point.cpp:51: error: expected ‘)’ before ‘__FUNCTION__’
+/home/baniuk/LOG_test/libs/Package1/C_Point.cpp:48: error: expected ‘)’ before ‘__func__’
+/home/baniuk/LOG_test/libs/Package1/C_Point.cpp:50: error: expected ‘)’ before ‘__func__’
+/home/baniuk/LOG_test/libs/Package1/C_Point.cpp:51: error: expected ‘)’ before ‘__func__’
 make[2]: *** [libs/Package1/CMakeFiles/Package1.dir/C_Point.cpp.o] Error 1
 make[1]: *** [libs/Package1/CMakeFiles/Package1.dir/all] Error 2
 make: *** [all] Error 2

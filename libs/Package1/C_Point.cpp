@@ -4,6 +4,7 @@ C_Point::C_Point( double _x, double _y ) :
 	x0(_x),
 	y0(_y)
 {
+	// dal debug jest z numerem linii itp
 	PANTHEIOS_TRACE_DEBUG(PSTR("Entering"));
 	PANTHEIOS_TRACE_DEBUG(PSTR("x = "),pantheios::real(x0),PSTR(" y = "),pantheios::real(y0));
 	PANTHEIOS_TRACE_DEBUG(PSTR("Leaving"));

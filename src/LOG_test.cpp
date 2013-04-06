@@ -15,7 +15,7 @@
 // dodaje do logu nazwê funkcji i linii, musi byæ przed trace.h http://stackoverflow.com/questions/2343821/how-to-include-the-calling-class-and-line-number-in-the-log-using-pantheios
 // zmiana wygl¹du logu: http://www.codeproject.com/Articles/27119/Using-Callback-Back-ends-with-the-Pantheios-Loggin
 #ifndef PANTHEIOS_INCL_PANTHEIOS_H_TRACE
-	#define PANTHEIOS_TRACE_PREFIX         __FILE__ "(" PANTHEIOS_STRINGIZE(__LINE__) "): " __FUNCTION__ ": "
+	#define PANTHEIOS_TRACE_PREFIX         __FILE__ "(" PANTHEIOS_STRINGIZE(__LINE__) "): "  ": "
 #endif /* PANTHEIOS_INCL_PANTHEIOS_H_TRACE */
 #include <pantheios/trace.h>
 
