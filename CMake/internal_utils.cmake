@@ -1,9 +1,32 @@
 # cmake utils and macros
 
 ########################################################################
+# Process all subdirectories                                           #
+########################################################################
+# Example:
+#
+# SUBDIRLIST(SUBDIRS ${MY_CURRENT_DIR})
+# 2) Use foreach:
+#
+# FOREACH(subdir ${SUBDIRS})
+#    ADD_SUBDIRECTORY(${subdir})
+# ENDFOREACH()
+# makro zakłada ze w danym katalogy wszystkie podkatalogi zawierają pliki cmake.txt
+MACRO(SUBDIRLIST result curdir)
+  FILE(GLOB children RELATIVE ${curdir} ${curdir}/*)
+  SET(dirlist "")
+  FOREACH(child ${children})
+    IF(IS_DIRECTORY ${curdir}/${child})
+        SET(dirlist ${dirlist} ${child})
+    ENDIF()
+  ENDFOREACH()
+  SET(${result} ${dirlist})
+ENDMACRO()
+
+########################################################################
 # Finds all packages                                                   #
 ########################################################################
-macro(find_all_required_packages)
+MACRO(find_all_required_packages)
 	# Common packages
 	find_package(Subversion REQUIRED)
 	find_package(Doxygen REQUIRED)
@@ -12,18 +35,19 @@ macro(find_all_required_packages)
 #		find_package(wget REQUIRED) # powoduje błędy - nie znaleziono findwget
 #		find_package(BZip2 REQUIRED)
 	ENDIF ( ${UNIX} )
-endmacro()
+ENDMACRO()
 
-macro(config_compiler_and_linker)
-
+########################################################################
+# Dodaje dodatkowe flagi do kompilatora                                #
+########################################################################
+MACRO(config_compiler_and_linker)
 	IF ( ${MSVC} )
 		MESSAGE(STATUS "MSVC detected - Adding compiler flags")
 		SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /MP")
 	ELSEIF (CMAKE_COMPILER_IS_GNUCXX)
 		MESSAGE(STATUS "GCC detected - Adding compiler flags")	
 	ENDIF( ${MSVC} )  
-
-endmacro()
+ENDMACRO()
 
 ########################################################################
 # Setting tools                                                        #

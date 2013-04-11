@@ -15,7 +15,7 @@ cmake_minimum_required (VERSION 2.8)
 # Define helper functions and macros
 include(CMake/internal_utils.cmake)
 
-find_all_required_packages()
+find_all_required_packages()  # Defined in internal_utils.cmake.
 config_compiler_and_linker()  # Defined in internal_utils.cmake.
 
 ########################################################################
