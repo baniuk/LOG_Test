@@ -1,6 +1,5 @@
 ########################################################################
 # CMake build script for external tools								   #	
-# \todo dodaæ flagi kompilatora \MP ustawiane do zmiennej w external_utils w zalezonoœci od systemu
 ########################################################################
 project (External_tools) 
 
