@@ -26,7 +26,7 @@ ENDMACRO()
 ########################################################################
 # Finds all packages                                                   #
 ########################################################################
-macro(find_all_required_packages)
+MACRO(find_all_required_packages)
 	# Common packages
 	find_package(Subversion REQUIRED)
 	find_package(Doxygen REQUIRED)
@@ -35,14 +35,14 @@ macro(find_all_required_packages)
 #		find_package(wget REQUIRED) # powoduje błędy - nie znaleziono findwget
 #		find_package(BZip2 REQUIRED)
 	ENDIF ( ${UNIX} )
-endmacro()
+ENDMACRO()
 
 ########################################################################
 # Sets additional flags. All are kept in cxx_flags variable that       # 
 # contains standard CMake flags and additional flags. Thi variable must#
 # be given explicily to every compiled file                            #
 ########################################################################
-macro(config_compiler_and_linker)
+MACRO(config_compiler_and_linker)
 	# można rozbić na różne zestawy parameetrów - exe, lib, itd
 	IF ( ${MSVC} )
 		MESSAGE(STATUS "MSVC detected - Adding compiler flags")
@@ -50,12 +50,12 @@ macro(config_compiler_and_linker)
 	ELSEIF (CMAKE_COMPILER_IS_GNUCXX)
 		MESSAGE(STATUS "GCC detected - Adding compiler flags")	
 	ENDIF( ${MSVC} )  
-endmacro()
+ENDMACRO()
 
 ########################################################################
 # Setting tools                                                        #
 ########################################################################
-macro(set_project_tools)
+MACRO(set_project_tools)
 	IF ( ${WIN32} )
 		set(WGET_EXECUTABLE ${Test_SOURCE_DIR}/tools/wget.exe CACHE FILEPATH "")
 		set(ZIP_EXECUTABLE ${Test_SOURCE_DIR}/tools/unzip.exe CACHE FILEPATH "")
@@ -67,7 +67,7 @@ macro(set_project_tools)
 	ELSE ( ${WIN32} )
 		message(FATAL_ERROR "Unknown system")
 	ENDIF ( ${WIN32} )
-endmacro()
+ENDMACRO()
 
 ########################################################################
 # Builds library with selsected compilator settings                    #
