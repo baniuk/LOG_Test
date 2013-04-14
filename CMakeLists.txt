@@ -54,10 +54,16 @@ add_subdirectory(Configs)
 ########################################################################
 add_subdirectory(libs)
 
-#include_directories(${CMAKE_ROOT}/external/stlsoft-1.9.116/include)
-#set( ENV{STLSOFT}  ${CMAKE_CURRENT_BINARY_DIR}/stlsoft-1.9.116)
-
+########################################################################
+# Building executables                                                 #
+########################################################################
 add_subdirectory(src)
+
+########################################################################
+# Setup testing                                                        #
+########################################################################
+enable_testing()
+add_subdirectory(tests)
 
 ########################################################################
 # Create warper makefile with external env                             #
