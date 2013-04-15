@@ -99,3 +99,33 @@ function(add_executable_with_flags name libs cxx_flags)
 		target_link_libraries(${name} ${lib})
 	endforeach()	
 endfunction()
+
+########################################################################
+# Builds test executable with selsected compilator settings            #
+# Usage: cxx_library(name,libs, flags, file1,file2,...)				   #
+# Prepared to be used with gtest									   #	
+########################################################################
+function(add_test_with_flags name libs cxx_flags)
+	# type can be either STATIC or SHARED to denote a static or shared library.
+	# ARGN refers to additional arguments after 'cxx_flags'.
+	# katalogi z bin i include (wewnątrz pliku misza być gtest/*.h)
+	ExternalProject_Get_Property(googletest source_dir)
+	ExternalProject_Get_Property(googletest binary_dir)
+	# dodatkowe nagłówki dla testów
+	include_directories(${source_dir}/include)
+	add_executable(${name} ${ARGN})
+	set_target_properties(${name}
+		PROPERTIES
+		COMPILE_FLAGS "${cxx_flags}")
+	# To support mixing linking in static and dynamic libraries, link each
+	# library in with an extra call to target_link_libraries.
+	foreach (lib "${libs}")
+		target_link_libraries(${name} ${lib})
+	endforeach()	
+	# dołączanie bibliotek z gtest
+	target_link_libraries(${name}
+						debug ${binary_dir}/DebugLibs/${CMAKE_FIND_LIBRARY_PREFIXES}gtest${CMAKE_FIND_LIBRARY_SUFFIXES}
+						debug ${binary_dir}/DebugLibs/${CMAKE_FIND_LIBRARY_PREFIXES}gtest_main${CMAKE_FIND_LIBRARY_SUFFIXES}
+						optimized ${binary_dir}/ReleaseLibs/${CMAKE_FIND_LIBRARY_PREFIXES}gtest${CMAKE_FIND_LIBRARY_SUFFIXES}
+						optimized ${binary_dir}/ReleaseLibs/${CMAKE_FIND_LIBRARY_PREFIXES}gtest_main${CMAKE_FIND_LIBRARY_SUFFIXES})
+endfunction()
