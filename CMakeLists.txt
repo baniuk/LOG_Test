@@ -10,7 +10,7 @@
 #			libbz2-dev
 # 			gcc 4.4.5 - ma znaczenie dla Panth i boosta
 
-cmake_minimum_required (VERSION 2.8) 
+cmake_minimum_required (VERSION 2.8.3) 
 
 # Define helper functions and macros
 include(CMake/internal_utils.cmake)
