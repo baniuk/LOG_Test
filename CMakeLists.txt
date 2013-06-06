@@ -47,7 +47,7 @@ add_subdirectory(Third_Party)
 ########################################################################
 # Building Doxygen DOC     (targrt doc, all)                           #
 ########################################################################
-add_subdirectory(Configs)
+#add_subdirectory(Configs)
 
 ########################################################################
 # Building Libraries and modules                                       #
@@ -63,7 +63,7 @@ add_subdirectory(src)
 # Setup testing                                                        #
 ########################################################################
 enable_testing()
-add_subdirectory(tests)
+#add_subdirectory(tests)
 
 ########################################################################
 # Create warper makefile with external env                             #

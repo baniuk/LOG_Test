@@ -94,7 +94,7 @@ ExternalProject_Add(	googletest
 						# SOURCE_DIR ${External_tools_SOURCE_DIR}/GTest-src
 						# Force separate output paths for debug and release builds to allow easy
 						# identification of correct lib in subsequent TARGET_LINK_LIBRARIES commands
-						CMAKE_ARGS -DCMAKE_CXX_FLAGS='/D_VARIADIC_MAX=10'
+						CMAKE_ARGS -DCMAKE_CXX_FLAGS='-D_VARIADIC_MAX=10'
 							-DCMAKE_ARCHIVE_OUTPUT_DIRECTORY_DEBUG:PATH=DebugLibs
 							-DCMAKE_ARCHIVE_OUTPUT_DIRECTORY_RELEASE:PATH=ReleaseLibs
 							-Dgtest_force_shared_crt=ON
@@ -148,9 +148,10 @@ ExternalProject_Add( 	Boost
 						INSTALL_COMMAND ""
 					)
 #set_property( TARGET Boost PROPERTY FOLDER "Externals")
-ExternalProject_Get_Property( Boost source_dir )
-ExternalProject_Get_Property( Boost binary_dir )
-set( Boost_INCLUDE_DIRS ${source_dir} )
-set( Boost_LIBRARIES ${binary_dir}/stage)		
-MESSAGE(STATUS "BOOST_INCLUDE_DIRS set to ${Boost_INCLUDE_DIRS}")	
-MESSAGE(STATUS "BOOST_LIBS_DIRS set to ${Boost_LIBRARIES}")			
+# Ustawia¿ w funkcjach buduj¿cych
+#ExternalProject_Get_Property( Boost source_dir )
+#ExternalProject_Get_Property( Boost binary_dir )
+#set( Boost_INCLUDE_DIRS ${source_dir} )
+#set( Boost_LIBRARIES ${binary_dir}/stage)		
+#MESSAGE(STATUS "^^^^^BOOST_INCLUDE_DIRS set to ${Boost_INCLUDE_DIRS}")	
+#MESSAGE(STATUS "^^^^^BOOST_LIBS_DIRS set to ${Boost_LIBRARIES}")			

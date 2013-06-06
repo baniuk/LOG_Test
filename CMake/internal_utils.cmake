@@ -47,8 +47,11 @@ MACRO(config_compiler_and_linker)
 	IF ( ${MSVC} )
 		MESSAGE(STATUS "MSVC detected - Adding compiler flags")
 		SET(cxx_flags "${CMAKE_CXX_FLAGS} -MP" CACHE STRING "")
-	ELSEIF (CMAKE_COMPILER_IS_GNUCXX)
-		MESSAGE(STATUS "GCC detected - Adding compiler flags")	
+	ELSEIF ( ${UNIX} )
+		MESSAGE(STATUS "GCC detected - Adding compiler flags")
+		SET(cxx_flags "${CMAKE_CXX_FLAGS}" CACHE STRING "")
+	ELSE ( ${MSVC} )
+		message(FATAL_ERROR "Unknown compiler")	
 	ENDIF( ${MSVC} )  
 ENDMACRO()
 
@@ -81,22 +84,25 @@ function(add_library_with_flags name type cxx_flags)
 		PROPERTIES
 		COMPILE_FLAGS "${cxx_flags}")
 endfunction()
-
 ########################################################################
 # Builds executable with selsected compilator settings                 #
 # Usage: cxx_library(name,libs, flags, file1,file2,...)				   #	
 ########################################################################
-function(add_executable_with_flags name libs cxx_flags)
+function(add_executable_with_flags name mylibs cxx_flags)
 	# type can be either STATIC or SHARED to denote a static or shared library.
 	# ARGN refers to additional arguments after 'cxx_flags'.
+	
+	# External Libs
+	ExternalProject_Get_Property(Pantheios source_dir)
+	link_directories(${source_dir}/lib)
 	add_executable(${name} ${ARGN})
 	set_target_properties(${name}
 		PROPERTIES
 		COMPILE_FLAGS "${cxx_flags}")
 	# To support mixing linking in static and dynamic libraries, link each
-	# library in with an extra call to target_link_libraries.
-	foreach (lib "${libs}")
-		target_link_libraries(${name} ${lib})
+	# library in with an extra call to target_link_libra
+	foreach(l ${mylibs})
+		target_link_libraries(${name} ${l})
 	endforeach()	
 endfunction()
 
