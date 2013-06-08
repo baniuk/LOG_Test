@@ -3,6 +3,8 @@ Czysci projekt
 ./bin/Third_Party/cmake_install.cmake
 ./bin/libs/cmake_install.cmake
 ./bin/libs/Package1/cmake_install.cmake
+./bin/tests/cmake_install.cmake
+./bin/tests/Package1_tests/cmake_install.cmake
 ./bin/cmake_install.cmake
 ./bin/src/cmake_install.cmake
 find: `./bin/Third_Party/GTest/src/googletest-build/CMakeFiles': No such file or directory
@@ -10,6 +12,8 @@ find: `./bin/Third_Party/CMakeFiles': No such file or directory
 find: `./bin/libs/CMakeFiles': No such file or directory
 find: `./bin/libs/Package1/CMakeFiles': No such file or directory
 find: `./bin/CMakeFiles': No such file or directory
+find: `./bin/tests/CMakeFiles': No such file or directory
+find: `./bin/tests/Package1_tests/CMakeFiles': No such file or directory
 find: `./bin/src/CMakeFiles': No such file or directory
 -- Found Subversion: /usr/bin/svn (found version "1.6.12") 
 -- Found Doxygen: /usr/bin/doxygen (found version "1.7.1") 
@@ -28,8 +32,10 @@ find: `./bin/src/CMakeFiles': No such file or directory
 -- Configuring done
 Generate graphviz: /home/baniuk/LOG_test/CMake_trash/ARCH.dot
 Writing /home/baniuk/LOG_test/CMake_trash/ARCH.dot.Package1...
+Writing /home/baniuk/LOG_test/CMake_trash/ARCH.dot.Package1_test...
 Writing /home/baniuk/LOG_test/CMake_trash/ARCH.dot.test_log...
 Writing /home/baniuk/LOG_test/CMake_trash/ARCH.dot.Package1.dependers...
+Writing /home/baniuk/LOG_test/CMake_trash/ARCH.dot.Package1_test.dependers...
 Writing /home/baniuk/LOG_test/CMake_trash/ARCH.dot.test_log.dependers...
 Writing /home/baniuk/LOG_test/CMake_trash/ARCH.dot...
 -- Generating done
@@ -37,19 +43,19 @@ Writing /home/baniuk/LOG_test/CMake_trash/ARCH.dot...
 STLSOFT set
 Scanning dependencies of target Boost
 [  2%] Completed 'Boost'
-[ 23%] Built target Boost
+[ 22%] Built target Boost
 Scanning dependencies of target STLSoft
-[ 26%] Completed 'STLSoft'
-[ 47%] Built target STLSoft
+[ 25%] Completed 'STLSoft'
+[ 44%] Built target STLSoft
 Scanning dependencies of target Pantheios
-[ 50%] No configure step for 'Pantheios'
-[ 52%] Performing build step for 'Pantheios'
-[ 55%] No install step for 'Pantheios'
-[ 58%] Completed 'Pantheios'
-[ 70%] Built target Pantheios
+[ 47%] No configure step for 'Pantheios'
+[ 50%] Performing build step for 'Pantheios'
+[ 52%] No install step for 'Pantheios'
+[ 55%] Completed 'Pantheios'
+[ 66%] Built target Pantheios
 Scanning dependencies of target googletest
-[ 73%] Creating directories for 'googletest'
-[ 76%] Performing download step (SVN checkout) for 'googletest'
+[ 69%] Creating directories for 'googletest'
+[ 72%] Performing download step (SVN checkout) for 'googletest'
 A    googletest/test
 A    googletest/test/gtest_break_on_failure_unittest_.cc
 A    googletest/test/gtest-param-test_test.cc
@@ -237,10 +243,10 @@ A    googletest/CMakeLists.txt
 A    googletest/make
 A    googletest/make/Makefile
 Checked out revision 654.
-[ 79%] No patch step for 'googletest'
-[ 82%] Performing update step (SVN update) for 'googletest'
+[ 75%] No patch step for 'googletest'
+[ 77%] Performing update step (SVN update) for 'googletest'
 At revision 654.
-[ 85%] Performing configure step for 'googletest'
+[ 80%] Performing configure step for 'googletest'
 -- The CXX compiler identification is GNU 4.4.5
 -- The C compiler identification is GNU 4.4.5
 -- Check for working CXX compiler: /usr/bin/c++
@@ -272,7 +278,7 @@ CMake Warning:
 
 
 -- Build files have been written to: /home/baniuk/LOG_test/bin/Third_Party/GTest/src/googletest-build
-[ 88%] Performing build step for 'googletest'
+[ 83%] Performing build step for 'googletest'
 Scanning dependencies of target gtest
 [ 50%] Building CXX object CMakeFiles/gtest.dir/src/gtest-all.cc.o
 Linking CXX static library libgtest.a
@@ -281,14 +287,20 @@ Scanning dependencies of target gtest_main
 [100%] Building CXX object CMakeFiles/gtest_main.dir/src/gtest_main.cc.o
 Linking CXX static library libgtest_main.a
 [100%] Built target gtest_main
-[ 91%] No install step for 'googletest'
-[ 94%] Completed 'googletest'
-[ 94%] Built target googletest
+[ 86%] No install step for 'googletest'
+[ 88%] Completed 'googletest'
+[ 88%] Built target googletest
 Scanning dependencies of target Package1
-[ 97%] Building CXX object libs/Package1/CMakeFiles/Package1.dir/C_Point.cpp.o
+[ 91%] Building CXX object libs/Package1/CMakeFiles/Package1.dir/C_Point.cpp.o
 Linking CXX static library libPackage1.a
-[ 97%] Built target Package1
+[ 91%] Built target Package1
 Scanning dependencies of target test_log
-[100%] Building CXX object src/CMakeFiles/test_log.dir/LOG_test.cpp.o
+[ 94%] Building CXX object src/CMakeFiles/test_log.dir/LOG_test.cpp.o
 Linking CXX executable test_log
-[100%] Built target test_log
+[ 94%] Built target test_log
+Scanning dependencies of target Package1_test
+[ 97%] Building CXX object tests/Package1_tests/CMakeFiles/Package1_test.dir/C_Point_TEST.cpp.o
+[100%] Building CXX object tests/Package1_tests/CMakeFiles/Package1_test.dir/TESTS.cpp.o
+make[2]: *** No rule to make target `Third_Party/GTest/src/googletest-build/ReleaseLibs/libgtest.so', needed by `tests/Package1_tests/Package1_test'.  Stop.
+make[1]: *** [tests/Package1_tests/CMakeFiles/Package1_test.dir/all] Error 2
+make: *** [all] Error 2

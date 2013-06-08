@@ -63,7 +63,7 @@ add_subdirectory(src)
 # Setup testing                                                        #
 ########################################################################
 enable_testing()
-#add_subdirectory(tests)
+add_subdirectory(tests)
 
 ########################################################################
 # Create warper makefile with external env                             #

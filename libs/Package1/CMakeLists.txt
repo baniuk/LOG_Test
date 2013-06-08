@@ -7,5 +7,5 @@ link_directories(${External_tools_SOURCE_DIR}/${PANTHEIOS_VER}/lib1)
 # biblioteki s¹ domyœlnie budowane jako STATIC, jeœli tego s³owa nie ma w add_library to zale¿y to od zmiennej BUILD_SHARED_LIBS
 add_library_with_flags(${LIB_NAME} STATIC "${cxx_flags}" C_Point.cpp)
 
-# Linkowanie w kocowych modu¿ch - test i exe 
+# Linkowanie w koncowych modu¿ch - test i exe 
 # Kolejnosc linkowania ma znaczenie

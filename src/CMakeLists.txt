@@ -15,6 +15,7 @@ ELSEIF ( ${UNIX} )
 ELSE ( ${WIN32} )
 	message(FATAL_ERROR "Unknown system")	
 ENDIF (${WIN32})	
+add_dependencies(${TESTED_PACKAGE_NAME} Package1 Pantheios)
 # podczs linkowania do gtest mo¿e treba u¿ycia target_link_ibraries albo po porstu nie rozró¿niac na katalogi podczs budowania gtest.
 # JEsli zak³¹damy ¿e podczas kompilacji bêdzie tylko jedna wersj to mo¿e nie trzeba
 #
