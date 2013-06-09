@@ -44,15 +44,15 @@ ENDMACRO()
 ########################################################################
 MACRO(config_compiler_and_linker)
 	# można rozbić na różne zestawy parameetrów - exe, lib, itd
-	IF ( ${MSVC} )
+	IF ( ${WIN32} )
 		MESSAGE(STATUS "MSVC detected - Adding compiler flags")
 		SET(cxx_flags "${CMAKE_CXX_FLAGS} -MP" CACHE STRING "")
 	ELSEIF ( ${UNIX} )
 		MESSAGE(STATUS "GCC detected - Adding compiler flags")
 		SET(cxx_flags "${CMAKE_CXX_FLAGS}" CACHE STRING "")
-	ELSE ( ${MSVC} )
+	ELSE ( ${WIN32} )
 		message(FATAL_ERROR "Unknown compiler")	
-	ENDIF( ${MSVC} )  
+	ENDIF( ${WIN32} )  
 ENDMACRO()
 
 ########################################################################

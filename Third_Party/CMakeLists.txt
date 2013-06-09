@@ -63,7 +63,7 @@ ELSEIF (${UNIX})
 		MESSAGE(FATAL_ERROR "Setup correct makefile for Pantheios for UNIX")
 	ENDIF (${CMAKE_COMPILER_IS_GNUCXX})	
 ELSE (${WIN32})
-	MESSAGE(FATAL_ERROR "Wrong system")
+	MESSAGE(FATAL_ERROR "Unknown system")
 ENDIF(${WIN32})
 
 # jak jest ustawiony projekt na œci¹ganie to œci¹g do source dir
