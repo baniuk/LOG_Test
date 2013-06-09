@@ -1,5 +1,6 @@
 #!/bin/bash
 
+#parametr ALL czyści wszystko
 tools/clean.sh $1
 mkdir bin
 cd bin

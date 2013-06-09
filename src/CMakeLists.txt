@@ -9,13 +9,13 @@ link_directories(${External_tools_SOURCE_DIR}/${PANTHEIOS_VER}/lib)
 # explicit linking for UNIX
 # Kolejnosc linkowania ma znaczenie
 IF (${WIN32})
-	add_executable_with_flags(${EXE_NAME} Package1 "${cxx_flags}" LOG_test.cpp)	# Package jest linkowane bo cmake zna katalog z lib (nie trzeba dodawaæ w link_directories)
-ELSEIF ( ${UNIX} )
-	add_executable_with_flags(${EXE_NAME} 	"Package1 libpantheios.1.core.gcc44.file64bit.a libpantheios.1.fe.N.gcc44.file64bit.a libpantheios.1.be.N.gcc44.file64bit.a libpantheios.1.bec.file.gcc44.file64bit.a libpantheios.1.bec.fprintf.gcc44.file64bit.a libpantheios.1.util.gcc44.file64bit.a"
-											"${cxx_flags}" LOG_test.cpp)
+	add_executable_with_flags(${EXE_NAME} Package1 "${cxx_flags}" LOG_test.cpp)
+ELSEIF ( ${UNIX} )  
+	add_executable_with_flags(${EXE_NAME} "Package1;libpantheios.1.core.gcc44.file64bit.a;libpantheios.1.fe.N.gcc44.file64bit.a;libpantheios.1.be.N.gcc44.file64bit.a;libpantheios.1.bec.file.gcc44.file64bit.a;libpantheios.1.bec.fprintf.gcc44.file64bit.a;libpantheios.1.util.gcc44.file64bit.a" "${cxx_flags}" LOG_test.cpp)
 ELSE ( ${WIN32} )
 	message(FATAL_ERROR "Unknown system")	
 ENDIF (${WIN32})	
+add_dependencies(${TESTED_PACKAGE_NAME} Package1 Pantheios)
 # podczs linkowania do gtest mo¿e treba u¿ycia target_link_ibraries albo po porstu nie rozró¿niac na katalogi podczs budowania gtest.
 # JEsli zak³¹damy ¿e podczas kompilacji bêdzie tylko jedna wersj to mo¿e nie trzeba
-# target_link_libraries(${EXE_NAME} Package1)
+#

@@ -10,7 +10,7 @@
 #			libbz2-dev
 # 			gcc 4.4.5 - ma znaczenie dla Panth i boosta
 
-cmake_minimum_required (VERSION 2.8) 
+cmake_minimum_required (VERSION 2.8.3) 
 
 # Define helper functions and macros
 include(CMake/internal_utils.cmake)
@@ -47,7 +47,7 @@ add_subdirectory(Third_Party)
 ########################################################################
 # Building Doxygen DOC     (targrt doc, all)                           #
 ########################################################################
-add_subdirectory(Configs)
+#add_subdirectory(Configs)
 
 ########################################################################
 # Building Libraries and modules                                       #
